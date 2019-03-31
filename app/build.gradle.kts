@@ -2,6 +2,8 @@ plugins {
     id("com.android.application")
     id("kotlin-android")
     id("kotlin-android-extensions")
+    id("androidx.navigation.safeargs")
+    id("kotlin-kapt")
 }
 
 android {
@@ -23,6 +25,7 @@ android {
             )
         }
     }
+    dataBinding.isEnabled = true
 }
 
 dependencies {
@@ -37,6 +40,36 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.1.0-alpha03")
     implementation("androidx.core:core-ktx:1.1.0-alpha05")
     implementation("androidx.constraintlayout:constraintlayout:1.1.3")
+
+    val moshiVersion: String? by project
+    implementation("com.squareup.moshi:moshi:$moshiVersion")
+    implementation("com.squareup.moshi:moshi-kotlin:$moshiVersion")
+
+    //    navigation
+    val navigationVersion: String? by project
+    implementation("android.arch.navigation:navigation-common-ktx:$navigationVersion")
+    implementation("android.arch.navigation:navigation-fragment:$navigationVersion")
+    implementation("android.arch.navigation:navigation-ui:$navigationVersion")
+    implementation("android.arch.navigation:navigation-fragment-ktx:$navigationVersion")
+    implementation("android.arch.navigation:navigation-ui-ktx:$navigationVersion")
+
+    //    lifecycle
+    implementation("androidx.lifecycle:lifecycle-extensions:2.0.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0")
+
+    //    Retrofit
+    val retrofitVersion: String? by project
+    implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
+    implementation("com.squareup.retrofit2:converter-moshi:$retrofitVersion")
+    implementation("com.squareup.okhttp3:okhttp:3.10.0")
+
+    //    room
+    val roomVersion: String? by project
+    implementation("android.arch.persistence.room:runtime:$roomVersion")
+    implementation("android.arch.persistence.room:rxjava2:1.1.1")
+    kapt("android.arch.persistence.room:compiler:$roomVersion")
+    androidTestImplementation("android.arch.persistence.room:testing:$roomVersion")
+
     testImplementation("junit:junit:4.12")
     androidTestImplementation("androidx.test:runner:1.1.2-alpha02")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0-alpha02")
