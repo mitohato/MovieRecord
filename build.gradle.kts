@@ -7,11 +7,11 @@ buildscript {
     val roomVersion by extra("1.1.1")
     val navigationVersion by extra("1.0.0-rc02")
     val moshiVersion by extra("1.5.0")
+    val koinVersion by extra("2.0.0-rc-2")
 
     repositories {
         google()
         jcenter()
-        
     }
     dependencies {
         classpath("com.android.tools.build:gradle:3.3.2")

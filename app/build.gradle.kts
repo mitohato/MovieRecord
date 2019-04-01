@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.Coroutines
+
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -70,7 +72,21 @@ dependencies {
     kapt("android.arch.persistence.room:compiler:$roomVersion")
     androidTestImplementation("android.arch.persistence.room:testing:$roomVersion")
 
+//    Koin
+    val koinVersion: String? by project
+//    Koin for Android
+    implementation("org.koin:koin-android:$koinVersion")
+//    AndroidX (based on koin-android)
+//    Koin AndroidX Scope feature
+    implementation("org.koin:koin-androidx-scope:$koinVersion")
+//    Koin AndroidX ViewModel feature
+    implementation("org.koin:koin-androidx-viewmodel:$koinVersion")
+
     testImplementation("junit:junit:4.12")
     androidTestImplementation("androidx.test:runner:1.1.2-alpha02")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0-alpha02")
+}
+
+kotlin { // type is KotlinJvmProjectExtension
+    experimental.coroutines = Coroutines.ENABLE
 }
