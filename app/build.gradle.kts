@@ -36,6 +36,7 @@ dependencies {
         "include" to listOf("*.jar")
     )))
 
+    implementation("androidx.legacy:legacy-support-v4:1.0.0-beta01")
     val kotlinVersion: String? by project
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion")
 
