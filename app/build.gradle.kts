@@ -43,6 +43,7 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.1.0-alpha03")
     implementation("androidx.core:core-ktx:1.1.0-alpha05")
     implementation("androidx.constraintlayout:constraintlayout:1.1.3")
+    implementation("androidx.cardview:cardview:1.0.0")
 
     val moshiVersion: String? by project
     implementation("com.squareup.moshi:moshi:$moshiVersion")
