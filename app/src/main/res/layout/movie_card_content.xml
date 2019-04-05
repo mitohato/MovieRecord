@@ -33,6 +33,7 @@
                 app:layout_constraintStart_toEndOf="@id/thumbnail_image"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/title"
+                app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_margin="10dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
