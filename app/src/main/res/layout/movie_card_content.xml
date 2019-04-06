@@ -25,6 +25,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_margin="10dp"
+                android:maxLines="1"
                 tool:text="hogehoge"/>
 
         <TextView
@@ -36,6 +37,7 @@
                 app:layout_constraintTop_toBottomOf="@id/title"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_margin="10dp"
+                android:maxLines="3"
                 tool:text="hogehoge"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
