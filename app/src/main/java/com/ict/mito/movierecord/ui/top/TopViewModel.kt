@@ -1,4 +1,4 @@
-package com.ict.mito.movierecord.ui
+package com.ict.mito.movierecord.ui.top
 
 import androidx.lifecycle.ViewModel;
 
