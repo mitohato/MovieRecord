@@ -2,7 +2,7 @@ package com.ict.mito.movierecord.ui.top.view
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.ict.mito.movierecord.databinding.MovieCardContentBinding
+import com.ict.mito.movierecord.databinding.MovieCardBinding
 import com.ict.mito.movierecord.domain.MovieItem
 
 /**
@@ -21,7 +21,7 @@ class TopAdapter(private val movieList: List<MovieItem>) : RecyclerView.Adapter<
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    inner class TopViewHolder(private val binding: MovieCardContentBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class TopViewHolder(private val binding: MovieCardBinding) : RecyclerView.ViewHolder(binding.root) {
 
     }
 }
