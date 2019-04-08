@@ -11,19 +11,25 @@ import com.ict.mito.movierecord.domain.MovieItem
  * Created by mitohato14 on 2019/04/07.
  */
 class TopAdapter(private val movieList: List<MovieItem>) : RecyclerView.Adapter<TopAdapter.TopViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TopViewHolder {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): TopViewHolder = TopViewHolder.create(
+        LayoutInflater.from(parent.context),
+        parent,
+        false
+    )
+
+    override fun getItemCount(): Int = movieList.size
+
+    override fun onBindViewHolder(
+        holder: TopViewHolder,
+        position: Int
+    ) {
+        holder.bind(movieList[position])
     }
 
-    override fun getItemCount(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun onBindViewHolder(holder: TopViewHolder, position: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    inner class TopViewHolder(private val binding: MovieCardBinding) : RecyclerView.ViewHolder(binding.root) {
+    class TopViewHolder(private val binding: MovieCardBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(movieItem: MovieItem) {
             binding.also {
                 it.movieItem = movieItem
