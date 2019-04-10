@@ -58,6 +58,5 @@ class TopAdapter(private val movieList: List<MovieItem>) : RecyclerView.Adapter<
                 )
             )
         }
-
     }
 }

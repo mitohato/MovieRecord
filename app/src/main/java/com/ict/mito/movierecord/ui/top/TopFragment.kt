@@ -17,10 +17,15 @@ class TopFragment : Fragment() {
     private lateinit var viewModel: TopViewModel
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.top_fragment, container, false)
+        return inflater.inflate(
+            R.layout.top_fragment,
+            container,
+            false
+        )
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -28,5 +33,4 @@ class TopFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(TopViewModel::class.java)
         // TODO: Use the ViewModel
     }
-
 }
