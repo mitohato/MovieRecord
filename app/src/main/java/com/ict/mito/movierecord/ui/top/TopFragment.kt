@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import com.ict.mito.movierecord.R
 import com.ict.mito.movierecord.databinding.TopFragmentBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class TopFragment : Fragment() {
 
@@ -17,17 +17,17 @@ class TopFragment : Fragment() {
         fun newInstance() = TopFragment()
     }
 
-    private lateinit var viewModel: TopViewModel
+    private val viewmodel: TopViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewModel.movieListLiveData.observe(
+        viewmodel.movieListLiveData.observe(
             this,
             Observer { list ->
-                viewModel.adapter.setMovieItemList(list)
+                viewmodel.adapter.setMovieItemList(list)
             }
         )
         val binding = DataBindingUtil.inflate<TopFragmentBinding>(
@@ -38,15 +38,9 @@ class TopFragment : Fragment() {
         )
 
         binding.also {
-            it.viewmodel = viewModel
+            it.viewmodel = viewmodel
             it.lifecycleOwner = this
         }
         return binding.root
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(TopViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 }
