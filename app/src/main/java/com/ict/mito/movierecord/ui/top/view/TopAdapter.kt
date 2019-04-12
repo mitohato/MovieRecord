@@ -10,7 +10,13 @@ import com.ict.mito.movierecord.domain.MovieItem
 /**
  * Created by mitohato14 on 2019/04/07.
  */
-class TopAdapter(private val movieList: List<MovieItem>) : RecyclerView.Adapter<TopAdapter.TopViewHolder>() {
+class TopAdapter(private var movieList: List<MovieItem>) : RecyclerView.Adapter<TopAdapter.TopViewHolder>() {
+
+    fun setMovieItemList(movieItemList: List<MovieItem>) {
+        movieList = movieItemList
+        notifyDataSetChanged()
+    }
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
