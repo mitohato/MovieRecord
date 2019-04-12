@@ -37,6 +37,10 @@ class TopFragment : Fragment() {
             false
         )
 
+        binding.also {
+            it.viewmodel = viewModel
+            it.lifecycleOwner = this
+        }
         return binding.root
     }
 
