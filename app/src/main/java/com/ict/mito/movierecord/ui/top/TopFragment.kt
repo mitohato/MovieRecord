@@ -13,10 +13,6 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class TopFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = TopFragment()
-    }
-
     private val viewmodel: TopViewModel by viewModel()
 
     override fun onCreateView(
