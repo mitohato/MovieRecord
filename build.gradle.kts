@@ -1,7 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    val kotlinVersion by extra("1.3.21")
+    val kotlinVersion by extra("1.3.30")
     val retrofitVersion by extra("2.3.0")
     val coroutineVersion by extra("")
     val roomVersion by extra("1.1.1")
