@@ -85,8 +85,8 @@ dependencies {
     implementation("org.koin:koin-androidx-viewmodel:$koinVersion")
 
     testImplementation("junit:junit:4.12")
-    androidTestImplementation("androidx.test:runner:1.2.0-alpha03")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0-alpha03")
+    androidTestImplementation("androidx.test:runner:1.2.0-alpha04")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0-alpha04")
 }
 
 kotlin { // type is KotlinJvmProjectExtension
