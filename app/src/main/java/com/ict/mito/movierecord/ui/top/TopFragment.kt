@@ -27,7 +27,7 @@ class TopFragment : Fragment() {
                 viewmodel.adapter.setMovieItemList(list)
             }
         )
-        binding = DataBindingUtil.inflate<TopFragmentBinding>(
+        binding = DataBindingUtil.inflate(
             inflater,
             R.layout.top_fragment,
             container,
