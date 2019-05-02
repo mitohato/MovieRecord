@@ -14,6 +14,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class TopFragment : Fragment() {
 
     private val viewmodel: TopViewModel by viewModel()
+    private var binding: TopFragmentBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,17 +27,22 @@ class TopFragment : Fragment() {
                 viewmodel.adapter.setMovieItemList(list)
             }
         )
-        val binding = DataBindingUtil.inflate<TopFragmentBinding>(
+        binding = DataBindingUtil.inflate<TopFragmentBinding>(
             inflater,
             R.layout.top_fragment,
             container,
             false
         )
 
-        binding.also {
+        binding?.let {
             it.viewmodel = viewmodel
             it.lifecycleOwner = this
         }
-        return binding.root
+        return binding?.root
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        binding = null
     }
 }
