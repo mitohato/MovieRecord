@@ -14,6 +14,7 @@ class TopViewHolder(private val binding: MovieCardBinding) : RecyclerView.ViewHo
     fun bind(movieItem: MovieItem) {
         binding.also {
             it.movieItem = movieItem
+            it.notifyChange()
             it.executePendingBindings()
         }
     }
