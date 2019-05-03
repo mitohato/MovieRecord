@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="movie_thumbnail_image">50dp</dimen>
+    <dimen name="movie_thumbnail_image">60dp</dimen>
 </resources>
