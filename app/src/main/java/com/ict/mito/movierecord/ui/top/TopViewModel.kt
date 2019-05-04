@@ -4,9 +4,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.ict.mito.movierecord.domain.DummyData
 import com.ict.mito.movierecord.domain.MovieItem
+import com.ict.mito.movierecord.repo.Repository
 import com.ict.mito.movierecord.ui.top.view.TopAdapter
 
-class TopViewModel : ViewModel() {
+class TopViewModel(private val repository: Repository) : ViewModel() {
     var movieListLiveData: MutableLiveData<List<MovieItem>> = MutableLiveData()
     val adapter: TopAdapter = TopAdapter(movieListLiveData.value ?: listOf())
 
