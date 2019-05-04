@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/navigation"
+            app:startDestination="@id/topFragment2">
+
+    <fragment android:id="@+id/topFragment2" android:name="com.ict.mito.movierecord.ui.top.TopFragment"
+              android:label="top_fragment" tools:layout="@layout/top_fragment"/>
+</navigation>

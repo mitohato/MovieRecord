@@ -36,12 +36,14 @@ dependencies {
         "include" to listOf("*.jar")
     )))
 
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
     val kotlinVersion: String? by project
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion")
 
-    implementation("androidx.appcompat:appcompat:1.1.0-alpha03")
+    implementation("androidx.appcompat:appcompat:1.1.0-alpha04")
     implementation("androidx.core:core-ktx:1.1.0-alpha05")
     implementation("androidx.constraintlayout:constraintlayout:1.1.3")
+    implementation("androidx.cardview:cardview:1.0.0")
 
     val moshiVersion: String? by project
     implementation("com.squareup.moshi:moshi:$moshiVersion")
@@ -83,8 +85,8 @@ dependencies {
     implementation("org.koin:koin-androidx-viewmodel:$koinVersion")
 
     testImplementation("junit:junit:4.12")
-    androidTestImplementation("androidx.test:runner:1.1.2-alpha02")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0-alpha02")
+    androidTestImplementation("androidx.test:runner:1.2.0-alpha04")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0-alpha04")
 }
 
 kotlin { // type is KotlinJvmProjectExtension

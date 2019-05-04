@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="movieItem" type="com.ict.mito.movierecord.domain.MovieItem"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_height="@dimen/card_height">
+
+        <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackground">
+            <include
+                    layout="@layout/movie_card_content"
+                    bind:movieItem="@{movieItem}"/>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</layout>

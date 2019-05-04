@@ -1,7 +1,9 @@
 package com.ict.mito.movierecord
 
 import android.app.Application
+import com.ict.mito.movierecord.ui.top.TopViewModel
 import org.koin.android.ext.koin.androidContext
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.startKoin
 import org.koin.core.module.Module
 
@@ -17,11 +19,11 @@ class App : Application() {
             // declare used Android context
             androidContext(this@App)
             // declare modules
-            modules(module)
+            modules(viewModelModule)
         }
     }
 
-    private val module: Module = org.koin.dsl.module {
-//        factory { HogeViewModel }
+    private val viewModelModule: Module = org.koin.dsl.module {
+        viewModel { TopViewModel() }
     }
 }
