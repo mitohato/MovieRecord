@@ -1,6 +1,7 @@
 package com.ict.mito.movierecord
 
 import android.app.Application
+import com.ict.mito.movierecord.repo.Repository
 import com.ict.mito.movierecord.ui.top.TopViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -19,11 +20,18 @@ class App : Application() {
             // declare used Android context
             androidContext(this@App)
             // declare modules
-            modules(viewModelModule)
+            modules(
+                viewModelModule,
+                repositoryModule
+            )
         }
     }
 
     private val viewModelModule: Module = org.koin.dsl.module {
         viewModel { TopViewModel() }
+    }
+
+    private val repositoryModule: Module = org.koin.dsl.module {
+        factory { RepositoryImpl() as Repository }
     }
 }
