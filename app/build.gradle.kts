@@ -87,6 +87,10 @@ dependencies {
     testImplementation("junit:junit:4.12")
     androidTestImplementation("androidx.test:runner:1.2.0")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0")
+
+    val groupieVersion: String? by project
+    implementation("com.xwray:groupie:$groupieVersion")
+    implementation("com.xwray:groupie-databinding:$groupieVersion")
 }
 
 kotlin { // type is KotlinJvmProjectExtension
