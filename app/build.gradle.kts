@@ -40,8 +40,8 @@ dependencies {
     val kotlinVersion: String? by project
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion")
 
-    implementation("androidx.appcompat:appcompat:1.1.0-alpha04")
-    implementation("androidx.core:core-ktx:1.1.0-alpha05")
+    implementation("androidx.appcompat:appcompat:1.1.0-beta01")
+    implementation("androidx.core:core-ktx:1.2.0-alpha02")
     implementation("androidx.constraintlayout:constraintlayout:1.1.3")
     implementation("androidx.cardview:cardview:1.0.0")
 
