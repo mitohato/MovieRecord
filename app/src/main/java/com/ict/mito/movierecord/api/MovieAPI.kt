@@ -8,8 +8,6 @@ import retrofit2.http.Query
  */
 interface MovieAPI {
 
-    fun getMovieList()
-
     fun getMovieDetail()
 
     @GET("movie/now_playing")
