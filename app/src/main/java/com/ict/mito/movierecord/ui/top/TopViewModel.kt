@@ -3,14 +3,18 @@ package com.ict.mito.movierecord.ui.top
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.ict.mito.movierecord.domain.DummyData
-import com.ict.mito.movierecord.domain.MovieItem
-import com.ict.mito.movierecord.ui.top.view.TopAdapter
+import com.xwray.groupie.GroupAdapter
+import com.xwray.groupie.databinding.ViewHolder
 
 class TopViewModel : ViewModel() {
-    var movieListLiveData: MutableLiveData<List<MovieItem>> = MutableLiveData()
-    val adapter: TopAdapter = TopAdapter(movieListLiveData.value ?: listOf())
+    val bindableRowItemList: MutableLiveData<ArrayList<TopRowItem>> = MutableLiveData()
+    val groupAdapter: GroupAdapter<ViewHolder<*>> = GroupAdapter()
 
     init {
-        movieListLiveData.value = DummyData.data
+        bindableRowItemList.value = arrayListOf()
+        DummyData.data.forEach {
+            bindableRowItemList.value?.add(TopRowItem(it))
+        }
+        groupAdapter.update(bindableRowItemList.value ?: arrayListOf())
     }
 }

@@ -8,13 +8,14 @@ buildscript {
     val navigationVersion by extra("1.0.0-rc02")
     val moshiVersion by extra("1.5.0")
     val koinVersion by extra("2.0.0-rc-2")
+    val groupieVersion by extra("2.3.0")
 
     repositories {
         google()
         jcenter()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:3.4.0")
+        classpath("com.android.tools.build:gradle:3.4.1")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
         classpath("android.arch.navigation:navigation-safe-args-gradle-plugin:$navigationVersion")
         // NOTE: Do not place your application dependencies here; they belong
