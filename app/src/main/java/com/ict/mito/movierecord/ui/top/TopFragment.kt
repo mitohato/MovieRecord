@@ -21,10 +21,10 @@ class TopFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewmodel.movieListLiveData.observe(
+        viewmodel.bindableRowItemList.observe(
             this,
             Observer { list ->
-                viewmodel.adapter.setMovieItemList(list)
+                viewmodel.groupAdapter.update(list)
             }
         )
         binding = DataBindingUtil.inflate(
