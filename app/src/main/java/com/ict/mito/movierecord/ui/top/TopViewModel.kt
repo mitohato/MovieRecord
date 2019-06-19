@@ -11,6 +11,7 @@ class TopViewModel : ViewModel() {
     val groupAdapter: GroupAdapter<ViewHolder<*>> = GroupAdapter()
 
     init {
+        bindableRowItemList.value = arrayListOf()
         DummyData.data.forEach {
             bindableRowItemList.value?.add(TopRowItem(it))
         }
