@@ -10,7 +10,7 @@ interface MovieAPI {
 
     fun getMovieList()
 
-    fun getMovieInfo()
+    fun getMovieDetail()
 
     @GET("movie/now_playing")
     fun getNowPlayingMovieList(
