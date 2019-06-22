@@ -1,7 +1,9 @@
 package com.ict.mito.movierecord.repo
 
+import com.ict.mito.movierecord.api.MovieAPI
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
+import retrofit2.Retrofit
 import java.util.concurrent.TimeUnit
 
 /**
@@ -25,6 +27,26 @@ class NetRepository {
             .readTimeout(30, TimeUnit.SECONDS)
 
         return httpClient
+    }
+
+    // core for controller
+    val service: MovieAPI = create(MovieAPI::class.java)
+
+    lateinit var retrofit: Retrofit
+
+    fun <S> create(serviceClass: Class<S>): S {
+        val gson = GsonBuilder()
+            .serializeNulls()
+            .create()
+
+        // create retrofit
+        retrofit = Retrofit.Builder()
+            .addConverterFactory(GsonConverterFactory.create(gson))
+            .baseUrl("http://randomuser.me/") // Put your base URL
+            .client(httpBuilder.build())
+            .build()
+
+        return retrofit.create(serviceClass)
     }
 
 }
