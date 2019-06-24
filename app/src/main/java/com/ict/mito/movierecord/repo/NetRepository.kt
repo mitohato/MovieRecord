@@ -1,9 +1,12 @@
 package com.ict.mito.movierecord.repo
 
+import com.ict.mito.movierecord.api.MovieAPI
+import com.ict.mito.movierecord.domain.NowPlayingMovieList
 import com.squareup.moshi.KotlinJsonAdapterFactory
 import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
@@ -13,7 +16,9 @@ import java.util.concurrent.TimeUnit
  */
 class NetRepository {
     private val baseUrl = ""
+    private val apiKey = ""
     private var retrofit: Retrofit
+    private val service: MovieAPI
     private val okHttpClient = OkHttpClient
         .Builder()
         .connectTimeout(120, TimeUnit.SECONDS)
@@ -34,6 +39,11 @@ class NetRepository {
             .client(okHttpClient)
             .build()
 
+        service = retrofit.create(MovieAPI::class.java)
+    }
+
+    fun getNowPlayingMovieList(): Response<NowPlayingMovieList> {
+        return service.getNowPlayingMovieList(apiKey).execute()
     }
 
 }
