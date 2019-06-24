@@ -1,6 +1,7 @@
 package com.ict.mito.movierecord.repo
 
 import com.ict.mito.movierecord.api.MovieAPI
+import com.ict.mito.movierecord.domain.MovieDetailResponseData
 import com.ict.mito.movierecord.domain.NowPlayingMovieList
 import com.squareup.moshi.KotlinJsonAdapterFactory
 import com.squareup.moshi.Moshi
@@ -46,4 +47,10 @@ class NetRepository {
         return service.getNowPlayingMovieList(apiKey).execute()
     }
 
+    fun getMovieDetail(movieId: Int): Response<MovieDetailResponseData> {
+        return service.getMovieDetail(
+            movieId,
+            apiKey
+        ).execute()
+    }
 }
