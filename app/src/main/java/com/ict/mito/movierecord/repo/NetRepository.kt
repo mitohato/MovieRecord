@@ -43,14 +43,11 @@ class NetRepository {
         service = retrofit.create(MovieAPI::class.java)
     }
 
-    fun getNowPlayingMovieList(): Response<NowPlayingMovieList> {
-        return service.getNowPlayingMovieList(apiKey).execute()
-    }
+    fun getNowPlayingMovieList(): Response<NowPlayingMovieList> = service.getNowPlayingMovieList(apiKey).execute()
 
-    fun getMovieDetail(movieId: Int): Response<MovieDetailResponseData> {
-        return service.getMovieDetail(
+    fun getMovieDetail(movieId: Int): Response<MovieDetailResponseData> =
+        service.getMovieDetail(
             movieId,
             apiKey
         ).execute()
-    }
 }
