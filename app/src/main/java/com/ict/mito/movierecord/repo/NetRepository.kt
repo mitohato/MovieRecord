@@ -1,52 +1,39 @@
 package com.ict.mito.movierecord.repo
 
-import com.ict.mito.movierecord.api.MovieAPI
-import okhttp3.Interceptor
+import com.squareup.moshi.KotlinJsonAdapterFactory
+import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
+import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
 
 /**
  * Created by mitohato14 on 2019-06-22.
  */
 class NetRepository {
-    val httpBuilder: OkHttpClient.Builder get() {
-        // create http client
-        val httpClient = OkHttpClient.Builder()
-            .addInterceptor(Interceptor { chain ->
-                val original = chain.request()
+    private val baseUrl = ""
+    private var retrofit: Retrofit
+    private val okHttpClient = OkHttpClient
+        .Builder()
+        .connectTimeout(120, TimeUnit.SECONDS)
+        .readTimeout(120, TimeUnit.SECONDS)
+        .addInterceptor(HttpLoggingInterceptor().apply {
+            level = HttpLoggingInterceptor.Level.BODY
+        })
+        .build()
 
-                //header
-                val request = original.newBuilder()
-                    .header("Accept", "application/json")
-                    .method(original.method(), original.body())
-                    .build()
-
-                return@Interceptor chain.proceed(request)
-            })
-            .readTimeout(30, TimeUnit.SECONDS)
-
-        return httpClient
-    }
-
-    // core for controller
-    val service: MovieAPI = create(MovieAPI::class.java)
-
-    lateinit var retrofit: Retrofit
-
-    fun <S> create(serviceClass: Class<S>): S {
-        val gson = GsonBuilder()
-            .serializeNulls()
-            .create()
-
-        // create retrofit
-        retrofit = Retrofit.Builder()
-            .addConverterFactory(GsonConverterFactory.create(gson))
-            .baseUrl("http://randomuser.me/") // Put your base URL
-            .client(httpBuilder.build())
+    init {
+        val moshi = Moshi.Builder()
+            .add(KotlinJsonAdapterFactory())
             .build()
 
-        return retrofit.create(serviceClass)
+        retrofit = Retrofit.Builder()
+            .baseUrl(baseUrl)
+            .addConverterFactory(MoshiConverterFactory.create(moshi))
+            .client(okHttpClient)
+            .build()
+
     }
 
 }
