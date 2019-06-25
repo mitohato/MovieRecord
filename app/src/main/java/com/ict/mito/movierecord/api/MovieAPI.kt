@@ -1,7 +1,7 @@
 package com.ict.mito.movierecord.api
 
-import com.ict.mito.movierecord.domain.MovieDetailResponseData
-import com.ict.mito.movierecord.domain.NowPlayingMovieList
+import com.ict.mito.movierecord.api.response.MovieDetailResponseData
+import com.ict.mito.movierecord.api.response.NowPlayingMovieList
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

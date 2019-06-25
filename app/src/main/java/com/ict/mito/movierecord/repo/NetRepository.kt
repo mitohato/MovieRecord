@@ -1,8 +1,8 @@
 package com.ict.mito.movierecord.repo
 
 import com.ict.mito.movierecord.api.MovieAPI
-import com.ict.mito.movierecord.domain.MovieDetailResponseData
-import com.ict.mito.movierecord.domain.NowPlayingMovieList
+import com.ict.mito.movierecord.api.response.MovieDetailResponseData
+import com.ict.mito.movierecord.api.response.NowPlayingMovieList
 import com.squareup.moshi.KotlinJsonAdapterFactory
 import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient

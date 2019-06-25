@@ -1,4 +1,4 @@
-package com.ict.mito.movierecord.domain
+package com.ict.mito.movierecord.api.response
 
 /**
  * Created by mitohato14 on 2019-06-24.
