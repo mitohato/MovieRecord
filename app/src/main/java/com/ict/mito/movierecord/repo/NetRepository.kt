@@ -1,5 +1,6 @@
 package com.ict.mito.movierecord.repo
 
+import com.ict.mito.movierecord.BuildConfig
 import com.ict.mito.movierecord.api.MovieAPI
 import com.ict.mito.movierecord.api.response.MovieDetailResponseData
 import com.ict.mito.movierecord.api.response.NowPlayingMovieList
@@ -16,8 +17,8 @@ import java.util.concurrent.TimeUnit
  * Created by mitohato14 on 2019-06-22.
  */
 class NetRepository {
-    private val baseUrl = ""
-    private val apiKey = ""
+    private val baseUrl = BuildConfig.MOVIE_DB_BASE_URL
+    private val apiKey = BuildConfig.MOVIE_DB_API_KEY_V3
     private var retrofit: Retrofit
     private val service: MovieAPI
     private val okHttpClient = OkHttpClient
