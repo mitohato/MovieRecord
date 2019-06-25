@@ -17,6 +17,22 @@ android {
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField(
+            "String",
+            "MOVIE_DB_BASE_URL",
+            System.getProperty("movie_db_base_url")
+        )
+        buildConfigField(
+            "String",
+            "MOVIE_DB_API_KEY_V3",
+            System.getProperty("movie_db_api_key_v3")
+        )
+        buildConfigField(
+            "String",
+            "MOVIE_DB_API_KEY_V4",
+            System.getProperty("movie_db_api_key_v4")
+        )
     }
     buildTypes {
         getByName("release") {
