@@ -28,7 +28,7 @@ class App : Application() {
         }
     }
 
-    private val viewModelModule: Module = org.koin.dsl.module {
+    private val viewModelModule: Module = module {
         viewModel { TopViewModel() }
     }
 
