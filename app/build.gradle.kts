@@ -17,6 +17,22 @@ android {
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField(
+            "String",
+            "MOVIE_DB_BASE_URL",
+            System.getProperty("movie_db_base_url")
+        )
+        buildConfigField(
+            "String",
+            "MOVIE_DB_API_KEY_V3",
+            System.getProperty("movie_db_api_key_v3")
+        )
+        buildConfigField(
+            "String",
+            "MOVIE_DB_API_KEY_V4",
+            System.getProperty("movie_db_api_key_v4")
+        )
     }
     buildTypes {
         getByName("release") {
@@ -70,6 +86,7 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation("com.squareup.retrofit2:converter-moshi:$retrofitVersion")
     implementation("com.squareup.okhttp3:okhttp:3.10.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:3.10.0")
 
     //    room
     val roomVersion: String? by project
