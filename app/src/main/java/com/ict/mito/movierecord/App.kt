@@ -33,6 +33,6 @@ class App : Application() {
     }
 
     private val repositoryModule: Module = module {
-        factory { NetRepository() }
+        single { NetRepository() }
     }
 }
