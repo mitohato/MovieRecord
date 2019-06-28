@@ -10,7 +10,7 @@ class ResponseConverter {
         return MovieItem(
             title = response.title,
             description = response.overview,
-            movieId = "${response.id}",
+            id = response.id,
             imageUrl = response.poster_path
         )
     }
