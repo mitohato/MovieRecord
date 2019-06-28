@@ -4,7 +4,6 @@ import com.ict.mito.movierecord.BuildConfig
 import com.ict.mito.movierecord.api.MovieAPI
 import com.ict.mito.movierecord.api.response.MovieDetailResponseData
 import com.ict.mito.movierecord.api.response.NowPlayingMovieList
-import com.squareup.moshi.KotlinJsonAdapterFactory
 import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -38,7 +37,7 @@ class NetRepository {
 
     init {
         val moshi = Moshi.Builder()
-            .add(KotlinJsonAdapterFactory())
+            .add(com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory())
             .build()
 
         retrofit = Retrofit.Builder()
