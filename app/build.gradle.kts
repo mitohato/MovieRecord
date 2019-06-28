@@ -68,6 +68,7 @@ dependencies {
     val moshiVersion: String? by project
     implementation("com.squareup.moshi:moshi:$moshiVersion")
     implementation("com.squareup.moshi:moshi-kotlin:$moshiVersion")
+    implementation("com.squareup.moshi:moshi-adapters:$moshiVersion")
 
     //    navigation
     val navigationVersion: String? by project

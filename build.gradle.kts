@@ -2,11 +2,11 @@
 
 buildscript {
     val kotlinVersion by extra("1.3.40")
-    val retrofitVersion by extra("2.3.0")
+    val retrofitVersion by extra("2.5.0")
     val coroutineVersion by extra("1.2.0")
     val roomVersion by extra("1.1.1")
     val navigationVersion by extra("1.0.0-rc02")
-    val moshiVersion by extra("1.5.0")
+    val moshiVersion by extra("1.8.0")
     val koinVersion by extra("2.0.0-rc-2")
     val groupieVersion by extra("2.3.0")
 
