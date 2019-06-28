@@ -72,11 +72,9 @@ dependencies {
 
     //    navigation
     val navigationVersion: String? by project
-    implementation("android.arch.navigation:navigation-common-ktx:$navigationVersion")
-    implementation("android.arch.navigation:navigation-fragment:$navigationVersion")
-    implementation("android.arch.navigation:navigation-ui:$navigationVersion")
-    implementation("android.arch.navigation:navigation-fragment-ktx:$navigationVersion")
-    implementation("android.arch.navigation:navigation-ui-ktx:$navigationVersion")
+    implementation("androidx.navigation:navigation-common-ktx:$navigationVersion")
+    implementation("androidx.navigation:navigation-fragment-ktx:$navigationVersion")
+    implementation("androidx.navigation:navigation-ui-ktx:$navigationVersion")
 
     //    lifecycle
     implementation("androidx.lifecycle:lifecycle-extensions:2.0.0")
@@ -91,10 +89,11 @@ dependencies {
 
     //    room
     val roomVersion: String? by project
-    implementation("android.arch.persistence.room:runtime:$roomVersion")
-    implementation("android.arch.persistence.room:rxjava2:1.1.1")
-    kapt("android.arch.persistence.room:compiler:$roomVersion")
-    androidTestImplementation("android.arch.persistence.room:testing:$roomVersion")
+    implementation("androidx.room:room-runtime:$roomVersion")
+    implementation("androidx.room:room-rxjava2:$roomVersion")
+    implementation("androidx.room:room-ktx:$roomVersion")
+    kapt("androidx.room:room-compiler:$roomVersion")
+    androidTestImplementation("androidx.room:room-testing:$roomVersion")
 
 //    Koin
     val koinVersion: String? by project
