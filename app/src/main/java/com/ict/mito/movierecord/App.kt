@@ -29,7 +29,7 @@ class App : Application() {
     }
 
     private val viewModelModule: Module = module {
-        viewModel { TopViewModel() }
+        viewModel { TopViewModel(get()) }
     }
 
     private val repositoryModule: Module = module {
