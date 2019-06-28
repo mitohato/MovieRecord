@@ -23,8 +23,14 @@ class NetRepository {
     private val service: MovieAPI
     private val okHttpClient = OkHttpClient
         .Builder()
-        .connectTimeout(120, TimeUnit.SECONDS)
-        .readTimeout(120, TimeUnit.SECONDS)
+        .connectTimeout(
+            120,
+            TimeUnit.SECONDS
+        )
+        .readTimeout(
+            120,
+            TimeUnit.SECONDS
+        )
         .addInterceptor(HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BODY
         })
