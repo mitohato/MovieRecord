@@ -2,7 +2,7 @@
 
 buildscript {
     val kotlinVersion by extra("1.3.40")
-    val retrofitVersion by extra("2.5.0")
+    val retrofitVersion by extra("2.6.0")
     val coroutineVersion by extra("1.3.0-M2")
     val roomVersion by extra("2.1.0")
     val navigationVersion by extra("2.1.0-alpha05")
