@@ -9,7 +9,6 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
@@ -63,7 +62,7 @@ class NetRepository {
         return list
     }
 
-    fun getMovieDetail(movieId: Int): Response<MovieDetailResponseData> {
+    fun getMovieDetail(movieId: Int): MovieDetailResponseData? {
         var responseData: MovieDetailResponseData? = null
         runBlocking {
             val job = async {
