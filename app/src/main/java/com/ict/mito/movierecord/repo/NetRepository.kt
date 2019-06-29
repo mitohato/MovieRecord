@@ -5,6 +5,8 @@ import com.ict.mito.movierecord.api.MovieAPI
 import com.ict.mito.movierecord.api.response.MovieDetailResponseData
 import com.ict.mito.movierecord.api.response.NowPlayingMovieList
 import com.squareup.moshi.Moshi
+import kotlinx.coroutines.async
+import kotlinx.coroutines.runBlocking
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Response
@@ -49,11 +51,32 @@ class NetRepository {
         service = retrofit.create(MovieAPI::class.java)
     }
 
-    fun getNowPlayingMovieList(): Response<NowPlayingMovieList> = service.getNowPlayingMovieList(apiKey).execute()
+    fun getNowPlayingMovieList(): NowPlayingMovieList? {
+        var list: NowPlayingMovieList? = null
+        runBlocking {
+            val job = async { service.getNowPlayingMovieList(apiKey) }
+            val res = job.await()
+            if (res.isSuccessful) {
+                list = res.body()
+            }
+        }
+        return list
+    }
 
-    fun getMovieDetail(movieId: Int): Response<MovieDetailResponseData> =
-        service.getMovieDetail(
-            movieId,
-            apiKey
-        ).execute()
+    fun getMovieDetail(movieId: Int): Response<MovieDetailResponseData> {
+        var responseData: MovieDetailResponseData? = null
+        runBlocking {
+            val job = async {
+                service.getMovieDetail(
+                    movieId,
+                    apiKey
+                )
+            }
+            val res = job.await()
+            if (res.isSuccessful) {
+                responseData = res.body()
+            }
+        }
+        return responseData
+    }
 }
