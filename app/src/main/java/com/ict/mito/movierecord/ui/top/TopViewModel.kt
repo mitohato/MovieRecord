@@ -13,7 +13,6 @@ class TopViewModel(private val repository: NetRepository) : ViewModel() {
 
     init {
         bindableRowItemList.value = arrayListOf()
-        val response = repository.getNowPlayingMovieList()
         val list = repository.getNowPlayingMovieList()
 
         list?.results?.forEach {
