@@ -11,7 +11,7 @@ class ResponseConverter {
             title = response.title,
             description = response.overview,
             id = response.id,
-            imageUrl = response.poster_path
+            imageUrl = response.posterPath
         )
     }
 }

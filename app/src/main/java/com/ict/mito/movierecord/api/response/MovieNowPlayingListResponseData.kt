@@ -1,23 +1,25 @@
 package com.ict.mito.movierecord.api.response
 
+import com.squareup.moshi.Json
+
 /**
  * Created by mitohato14 on 2019-06-19.
  */
 data class MovieNowPlayingListResponseData(
-    val vote_count: Int,
-    val id: Int,
-    val video: Boolean,
-    val vote_averages: Double,
-    val title: String,
-    val popularity: Double,
-    val poster_path: String,
-    val original_language: String,
-    val original_title: String,
-    val genre_ids: Array<Int>,
-    val backdrop_path: String,
-    val adult: Boolean,
-    val overview: String,
-    val release_date: String
+    @Json(name = "vote_count") val voteCount: Int,
+    @Json(name = "id") val id: Int,
+    @Json(name = "video") val video: Boolean,
+    @Json(name = "vote_averages") val voteAverages: Double,
+    @Json(name = "title") val title: String,
+    @Json(name = "popularity") val popularity: Double,
+    @Json(name = "poster_path") val posterPath: String,
+    @Json(name = "original_language") val originalLanguage: String,
+    @Json(name = "original_title") val originalTitle: String,
+    @Json(name = "genre_ids") val genreIds: Array<Int>,
+    @Json(name = "backdrop_path") val backdropPath: String,
+    @Json(name = "adult") val adult: Boolean,
+    @Json(name = "overview") val overview: String,
+    @Json(name = "release_date") val releaseDate: String
 ) {
     override fun equals(other: Any?): Boolean {
         return if (other is MovieDetailResponseData) {
@@ -28,20 +30,20 @@ data class MovieNowPlayingListResponseData(
     }
 
     override fun hashCode(): Int {
-        var result = vote_count
+        var result = voteCount
         result = 31 * result + id
         result = 31 * result + video.hashCode()
-        result = 31 * result + vote_averages.hashCode()
+        result = 31 * result + voteAverages.hashCode()
         result = 31 * result + title.hashCode()
         result = 31 * result + popularity.hashCode()
-        result = 31 * result + poster_path.hashCode()
-        result = 31 * result + original_language.hashCode()
-        result = 31 * result + original_title.hashCode()
-        result = 31 * result + genre_ids.contentHashCode()
-        result = 31 * result + backdrop_path.hashCode()
+        result = 31 * result + posterPath.hashCode()
+        result = 31 * result + originalLanguage.hashCode()
+        result = 31 * result + originalTitle.hashCode()
+        result = 31 * result + genreIds.contentHashCode()
+        result = 31 * result + backdropPath.hashCode()
         result = 31 * result + adult.hashCode()
         result = 31 * result + overview.hashCode()
-        result = 31 * result + release_date.hashCode()
+        result = 31 * result + releaseDate.hashCode()
         return result
     }
 }
