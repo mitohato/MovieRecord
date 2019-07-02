@@ -9,7 +9,7 @@ data class MovieNowPlayingListResponseData(
     @Json(name = "vote_count") val voteCount: Int,
     @Json(name = "id") val id: Int,
     @Json(name = "video") val video: Boolean,
-    @Json(name = "vote_averages") val voteAverages: Double,
+    @Json(name = "vote_average") val voteAverage: Double,
     @Json(name = "title") val title: String,
     @Json(name = "popularity") val popularity: Double,
     @Json(name = "poster_path") val posterPath: String,
@@ -33,7 +33,7 @@ data class MovieNowPlayingListResponseData(
         var result = voteCount
         result = 31 * result + id
         result = 31 * result + video.hashCode()
-        result = 31 * result + voteAverages.hashCode()
+        result = 31 * result + voteAverage.hashCode()
         result = 31 * result + title.hashCode()
         result = 31 * result + popularity.hashCode()
         result = 31 * result + posterPath.hashCode()
