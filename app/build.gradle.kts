@@ -112,6 +112,8 @@ dependencies {
     val groupieVersion: String? by project
     implementation("com.xwray:groupie:$groupieVersion")
     implementation("com.xwray:groupie-databinding:$groupieVersion")
+
+    implementation("com.squareup.picasso:picasso:2.71828")
 }
 
 kotlin { // type is KotlinJvmProjectExtension
