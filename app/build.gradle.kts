@@ -25,6 +25,11 @@ android {
         )
         buildConfigField(
             "String",
+            "MOVIE_DB_IMAGE_BASE_URL",
+            System.getProperty("movie_db_image_base_url")
+        )
+        buildConfigField(
+            "String",
             "MOVIE_DB_API_KEY_V3",
             System.getProperty("movie_db_api_key_v3")
         )
@@ -112,6 +117,8 @@ dependencies {
     val groupieVersion: String? by project
     implementation("com.xwray:groupie:$groupieVersion")
     implementation("com.xwray:groupie-databinding:$groupieVersion")
+
+    implementation("com.squareup.picasso:picasso:2.71828")
 }
 
 kotlin { // type is KotlinJvmProjectExtension

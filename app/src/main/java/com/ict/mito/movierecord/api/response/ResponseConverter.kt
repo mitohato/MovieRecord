@@ -1,5 +1,6 @@
 package com.ict.mito.movierecord.api.response
 
+import com.ict.mito.movierecord.BuildConfig
 import com.ict.mito.movierecord.domain.MovieItem
 
 /**
@@ -7,11 +8,12 @@ import com.ict.mito.movierecord.domain.MovieItem
  */
 class ResponseConverter {
     fun convertToMovieItemFromNowPlayingList(response: MovieNowPlayingListResponseData): MovieItem {
+        val imageBaseUrl: String = BuildConfig.MOVIE_DB_IMAGE_BASE_URL
         return MovieItem(
             title = response.title,
             description = response.overview,
             id = response.id,
-            imageUrl = response.posterPath
+            imageUrl = imageBaseUrl + response.posterPath
         )
     }
 }
