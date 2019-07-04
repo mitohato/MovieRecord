@@ -25,7 +25,8 @@ class App : Application() {
             modules(
                 listOf(
                     viewModelModule,
-                    repositoryModule
+                    repositoryModule,
+                    apiModule
                 )
             )
         }
