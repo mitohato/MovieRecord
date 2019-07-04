@@ -11,7 +11,7 @@ import kotlinx.coroutines.runBlocking
  * Created by mitohato14 on 2019-06-22.
  */
 class NetRepository(private val apiClient: ApiClient) {
-    val apiKey: String = BuildConfig.MOVIE_DB_API_KEY_V3
+    private val apiKey: String = BuildConfig.MOVIE_DB_API_KEY_V3
     fun getNowPlayingMovieList(): NowPlayingMovieList? {
         var list: NowPlayingMovieList? = null
         runBlocking {
