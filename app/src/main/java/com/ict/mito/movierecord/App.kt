@@ -1,6 +1,7 @@
 package com.ict.mito.movierecord
 
 import android.app.Application
+import com.ict.mito.movierecord.api.ApiClient
 import com.ict.mito.movierecord.repo.NetRepository
 import com.ict.mito.movierecord.ui.top.TopViewModel
 import org.koin.android.ext.koin.androidContext
@@ -35,6 +36,10 @@ class App : Application() {
     }
 
     private val repositoryModule: Module = module {
-        single { NetRepository() }
+        single { NetRepository(get()) }
+    }
+
+    private val apiModule: Module = module {
+        single { ApiClient() }
     }
 }
