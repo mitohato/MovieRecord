@@ -14,7 +14,6 @@ import java.util.concurrent.TimeUnit
  */
 class ApiClient {
     private val baseUrl = BuildConfig.MOVIE_DB_BASE_URL
-    val apiKey = BuildConfig.MOVIE_DB_API_KEY_V3
     private var retrofit: Retrofit
     val service: MovieAPI
     private val okHttpClient = OkHttpClient
