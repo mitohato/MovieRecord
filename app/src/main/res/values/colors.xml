@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#9E9E9E</color>
     <color name="colorSecondary">#00BCD4</color>
     <color name="surface">#8E24AA</color>
+    <color name="surfaceDark">#6A1B9A</color>
 </resources>
