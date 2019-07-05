@@ -18,7 +18,6 @@
                 android:layout_height="@dimen/movie_thumbnail_image"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:imageURL="@{movieItem.imageUrl}"
                 android:layout_margin="10dp"
                 android:contentDescription="@string/thumbnail"/>
