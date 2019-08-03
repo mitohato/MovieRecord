@@ -119,6 +119,18 @@ dependencies {
     implementation("com.xwray:groupie-databinding:$groupieVersion")
 
     implementation("com.squareup.picasso:picasso:2.71828")
+
+    debugImplementation("com.willowtreeapps.hyperion:hyperion-core:0.9.27")
+    debugImplementation("com.willowtreeapps.hyperion:hyperion-attr:0.9.27")
+    debugImplementation("com.willowtreeapps.hyperion:hyperion-build-config:0.9.27")
+    debugImplementation("com.willowtreeapps.hyperion:hyperion-crash:0.9.27")
+    debugImplementation("com.willowtreeapps.hyperion:hyperion-disk:0.9.27")
+    debugImplementation("com.willowtreeapps.hyperion:hyperion-geiger-counter:0.9.27")
+    debugImplementation("com.willowtreeapps.hyperion:hyperion-measurement:0.9.27")
+    debugImplementation("com.willowtreeapps.hyperion:hyperion-phoenix:0.9.27")
+    debugImplementation("com.willowtreeapps.hyperion:hyperion-recorder:0.9.27")
+    debugImplementation("com.willowtreeapps.hyperion:hyperion-shared-preferences:0.9.27")
+    debugImplementation("com.willowtreeapps.hyperion:hyperion-timber:0.9.27")
 }
 
 kotlin { // type is KotlinJvmProjectExtension
