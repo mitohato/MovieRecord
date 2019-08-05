@@ -65,7 +65,7 @@ dependencies {
     val kotlinVersion: String? by project
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion")
 
-    implementation("androidx.appcompat:appcompat:1.1.0-beta01")
+    implementation("androidx.appcompat:appcompat:1.1.0-rc01")
     implementation("androidx.core:core-ktx:1.2.0-alpha02")
     implementation("androidx.constraintlayout:constraintlayout:1.1.3")
     implementation("androidx.cardview:cardview:1.0.0")
@@ -90,7 +90,7 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation("com.squareup.retrofit2:converter-moshi:$retrofitVersion")
     implementation("com.squareup.okhttp3:okhttp:3.12.0")
-    implementation("com.squareup.okhttp3:logging-interceptor:3.10.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:3.11.0")
 
     //    room
     val roomVersion: String? by project
