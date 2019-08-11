@@ -28,7 +28,8 @@ class App : Application() {
                 listOf(
                     viewModelModule,
                     repositoryModule,
-                    apiModule
+                    apiModule,
+                    dataBaseModule
                 )
             )
         }
