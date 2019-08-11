@@ -15,4 +15,9 @@ import com.ict.mito.movierecord.domain.db.dao.MovieDAO
 )
 abstract class MovieRoomDataBase : RoomDatabase() {
     abstract fun movieDao(): MovieDAO
+
+    companion object {
+        
+
+    }
 }
