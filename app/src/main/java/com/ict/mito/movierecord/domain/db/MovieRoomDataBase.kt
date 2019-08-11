@@ -1,6 +1,8 @@
 package com.ict.mito.movierecord.domain.db
 
+import android.content.Context
 import androidx.room.Database
+import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.ict.mito.movierecord.domain.MovieItem
 import com.ict.mito.movierecord.domain.db.dao.MovieDAO
@@ -20,7 +22,20 @@ abstract class MovieRoomDataBase : RoomDatabase() {
     companion object {
         @Singleton
         private var INSTANCE: MovieRoomDataBase? = null
-        
 
+        fun getDataBase(context: Context): MovieRoomDataBase {
+            return INSTANCE ?: synchronized(this) {
+                val instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    MovieRoomDataBase::class.java,
+                    "movie_database"
+                )
+                    .allowMainThreadQueries()
+                    .fallbackToDestructiveMigration()
+                    .build()
+                INSTANCE = instance
+                instance
+            }
+        }
     }
 }
