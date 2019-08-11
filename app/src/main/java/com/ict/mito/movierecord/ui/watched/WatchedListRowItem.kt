@@ -15,8 +15,6 @@ class WatchedListRowItem(val movieItem: MovieItem): BindableItem<MovieCardBindin
         viewBinding: MovieCardBinding,
         position: Int
     ) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        viewBinding.movieItem = movieItem
     }
-
-
 }
