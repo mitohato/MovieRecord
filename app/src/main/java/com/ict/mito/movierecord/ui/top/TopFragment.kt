@@ -1,9 +1,7 @@
 package com.ict.mito.movierecord.ui.top
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -39,7 +37,18 @@ class TopFragment : Fragment() {
             it.viewmodel = viewmodel
             it.lifecycleOwner = this
         }
+        setHasOptionsMenu(true)
         return binding?.root
+    }
+
+    override fun onCreateOptionsMenu(
+        menu: Menu,
+        inflater: MenuInflater
+    ) {
+        inflater.inflate(
+            R.menu.main_menu,
+            menu
+        )
     }
 
     override fun onResume() {
