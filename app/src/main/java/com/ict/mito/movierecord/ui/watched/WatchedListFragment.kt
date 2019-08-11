@@ -12,7 +12,8 @@ import com.ict.mito.movierecord.databinding.WatchedListFragmentBinding
 
 class WatchedListFragment : Fragment() {
 
-    var binding: WatchedListFragmentBinding? = null
+    private var binding: WatchedListFragmentBinding? = null
+
     companion object {
         fun newInstance() = WatchedListFragment()
     }
