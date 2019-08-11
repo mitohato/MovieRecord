@@ -2,6 +2,7 @@ package com.ict.mito.movierecord
 
 import android.app.Application
 import com.ict.mito.movierecord.api.ApiClient
+import com.ict.mito.movierecord.domain.db.MovieRoomDataBase
 import com.ict.mito.movierecord.repo.NetRepository
 import com.ict.mito.movierecord.ui.top.TopViewModel
 import com.ict.mito.movierecord.ui.watched.WatchedListViewModel
@@ -27,7 +28,8 @@ class App : Application() {
                 listOf(
                     viewModelModule,
                     repositoryModule,
-                    apiModule
+                    apiModule,
+                    dataBaseModule
                 )
             )
         }
@@ -44,5 +46,10 @@ class App : Application() {
 
     private val apiModule: Module = module {
         single { ApiClient() }
+    }
+
+    private val dataBaseModule: Module = module {
+        single { MovieRoomDataBase.getDataBase(androidContext()) }
+        single { get<MovieRoomDataBase>().movieDao() }
     }
 }
