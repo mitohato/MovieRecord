@@ -15,9 +15,6 @@ class WatchedListFragment : Fragment() {
 
     private var binding: WatchedListFragmentBinding? = null
 
-    companion object {
-        fun newInstance() = WatchedListFragment()
-    }
 
     private val viewModel: WatchedListViewModel by viewModel()
 
