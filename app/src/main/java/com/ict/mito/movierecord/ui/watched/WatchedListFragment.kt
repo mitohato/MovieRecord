@@ -1,15 +1,19 @@
 package com.ict.mito.movierecord.ui.watched
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import com.ict.mito.movierecord.R
+import com.ict.mito.movierecord.databinding.WatchedListFragmentBinding
 
 class WatchedListFragment : Fragment() {
+
+    private var binding: WatchedListFragmentBinding? = null
 
     companion object {
         fun newInstance() = WatchedListFragment()
@@ -18,10 +22,27 @@ class WatchedListFragment : Fragment() {
     private lateinit var viewModel: WatchedListViewModel
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.watched_list_fragment, container, false)
+        viewModel.bindableRowItemList.observe(
+            this,
+            Observer {
+                viewModel.groupAdapter.update(it)
+            }
+        )
+        binding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.watched_list_fragment,
+            container,
+            false
+        )
+
+        binding.viewmodel = viewModel
+
+        return binding?.root
+
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -30,4 +51,8 @@ class WatchedListFragment : Fragment() {
         // TODO: Use the ViewModel
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        binding = null
+    }
 }
