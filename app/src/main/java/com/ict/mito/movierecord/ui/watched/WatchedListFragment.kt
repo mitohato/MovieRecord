@@ -39,11 +39,14 @@ class WatchedListFragment : Fragment() {
             false
         )
 
-        binding?.viewmodel = viewModel
+        binding?.also {
+            it.viewmodel = viewModel
+            it.lifecycleOwner = this
+        }
 
         return binding?.root
-
     }
+
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
