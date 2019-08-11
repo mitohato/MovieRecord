@@ -12,10 +12,7 @@ import com.ict.mito.movierecord.databinding.WatchedListFragmentBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class WatchedListFragment : Fragment() {
-
     private var binding: WatchedListFragmentBinding? = null
-
-
     private val viewModel: WatchedListViewModel by viewModel()
 
     override fun onCreateView(
@@ -43,7 +40,6 @@ class WatchedListFragment : Fragment() {
 
         return binding?.root
     }
-
 
     override fun onDestroy() {
         super.onDestroy()
