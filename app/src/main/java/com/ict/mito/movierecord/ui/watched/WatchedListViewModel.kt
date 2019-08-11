@@ -1,7 +1,11 @@
 package com.ict.mito.movierecord.ui.watched
 
-import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import com.xwray.groupie.GroupAdapter
+import com.xwray.groupie.databinding.ViewHolder
 
 class WatchedListViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+    val bindableRowItemList: MutableLiveData<ArrayList<WatchedListRowItem>> = MutableLiveData()
+    val groupAdapter: GroupAdapter<ViewHolder<*>> = GroupAdapter()
 }
