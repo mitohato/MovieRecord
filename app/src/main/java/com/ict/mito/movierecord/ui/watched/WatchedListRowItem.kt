@@ -11,7 +11,10 @@ import com.xwray.groupie.databinding.BindableItem
 class WatchedListRowItem(val movieItem: MovieItem): BindableItem<MovieCardBinding>() {
     override fun getLayout(): Int = R.layout.movie_card
 
-    override fun bind(viewBinding: MovieCardBinding, position: Int) {
+    override fun bind(
+        viewBinding: MovieCardBinding,
+        position: Int
+    ) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
