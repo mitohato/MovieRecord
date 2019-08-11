@@ -5,7 +5,7 @@
     <item
             android:id="@+id/watched_list"
             app:showAsAction="ifRoom"
-            android:icon="@drawable/ic_watched_list_black_24dp"
+            android:icon="@drawable/ic_watched_list_white_24dp"
             android:title="@string/watched_list"/>
 
 </menu>
