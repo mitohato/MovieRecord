@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.ict.mito.movierecord.R
 import com.ict.mito.movierecord.databinding.WatchedListFragmentBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class WatchedListFragment : Fragment() {
 
@@ -19,7 +20,7 @@ class WatchedListFragment : Fragment() {
         fun newInstance() = WatchedListFragment()
     }
 
-    private lateinit var viewModel: WatchedListViewModel
+    private val viewModel: WatchedListViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -50,7 +51,6 @@ class WatchedListFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(WatchedListViewModel::class.java)
         // TODO: Use the ViewModel
     }
 
