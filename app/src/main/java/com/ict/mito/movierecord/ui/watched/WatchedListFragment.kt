@@ -8,9 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.ict.mito.movierecord.R
+import com.ict.mito.movierecord.databinding.WatchedListFragmentBinding
 
 class WatchedListFragment : Fragment() {
 
+    var binding: WatchedListFragmentBinding? = null
     companion object {
         fun newInstance() = WatchedListFragment()
     }
@@ -31,4 +33,8 @@ class WatchedListFragment : Fragment() {
         // TODO: Use the ViewModel
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        binding = null
+    }
 }
