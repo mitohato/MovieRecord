@@ -2,5 +2,5 @@
 <resources>
     <dimen name="movie_thumbnail_image">40dp</dimen>
     <dimen name="card_height">90dp</dimen>
-    <dimen name="card_content_height">88dp</dimen>
+    <dimen name="card_content_height">85dp</dimen>
 </resources>
