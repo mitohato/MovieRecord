@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.ict.mito.movierecord.R
 import com.ict.mito.movierecord.databinding.WatchedListFragmentBinding
@@ -25,6 +26,12 @@ class WatchedListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        viewModel.bindableRowItemList.observe(
+            this,
+            Observer {
+                viewModel.groupAdapter.update(it)
+            }
+        )
         binding = DataBindingUtil.inflate(
             inflater,
             R.layout.watched_list_fragment,
