@@ -39,7 +39,7 @@ class WatchedListFragment : Fragment() {
             false
         )
 
-        binding.viewmodel = viewModel
+        binding?.viewmodel = viewModel
 
         return binding?.root
 
