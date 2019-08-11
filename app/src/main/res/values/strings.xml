@@ -3,4 +3,6 @@
     <string name="thumbnail">Thumbnail</string>
     <string name="line">line</string>
     <string name="watched_list">Watched List</string>
+
+    <string name="title_top">Now Playing</string>
 </resources>

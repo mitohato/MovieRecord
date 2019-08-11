@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -39,6 +40,13 @@ class TopFragment : Fragment() {
             it.lifecycleOwner = this
         }
         return binding?.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        val appCompatActivity = activity as AppCompatActivity?
+        appCompatActivity?.supportActionBar?.title = getString(R.string.title_top)
     }
 
     override fun onDestroy() {
