@@ -17,6 +17,7 @@
                 android:id="@+id/watched_list"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:adapter="@{viewmodel.groupAdapter}"
                 android:layout_margin="@dimen/base_list_margin"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
