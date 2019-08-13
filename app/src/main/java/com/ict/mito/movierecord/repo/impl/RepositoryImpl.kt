@@ -11,7 +11,5 @@ import io.reactivex.Single
 class RepositoryImpl(private val dao: MovieDAO) : Repository {
     override fun getAllMovie(): Single<List<MovieItem>> = dao.getAllMovie()
 
-    override fun add(movieItem: MovieItem) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+    override fun add(movieItem: MovieItem) = dao.insert(movieItem)
 }
