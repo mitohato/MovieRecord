@@ -9,9 +9,7 @@ import io.reactivex.Single
  * Created by mitohato14 on 2019-08-13.
  */
 class RepositoryImpl(private val dao: MovieDAO) : Repository {
-    override fun getAllMovie(): Single<List<MovieItem>> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+    override fun getAllMovie(): Single<List<MovieItem>> = dao.getAllMovie()
 
     override fun add(movieItem: MovieItem) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
