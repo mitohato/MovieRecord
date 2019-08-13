@@ -3,7 +3,10 @@ package com.ict.mito.movierecord
 import android.app.Application
 import com.ict.mito.movierecord.api.ApiClient
 import com.ict.mito.movierecord.domain.db.MovieRoomDataBase
+import com.ict.mito.movierecord.domain.db.dao.MovieDAO
 import com.ict.mito.movierecord.repo.NetRepository
+import com.ict.mito.movierecord.repo.Repository
+import com.ict.mito.movierecord.repo.impl.RepositoryImpl
 import com.ict.mito.movierecord.ui.top.TopViewModel
 import com.ict.mito.movierecord.ui.watched.WatchedListViewModel
 import org.koin.android.ext.koin.androidContext
@@ -42,6 +45,7 @@ class App : Application() {
 
     private val repositoryModule: Module = module {
         single { NetRepository(get()) }
+        single { RepositoryImpl(get() as MovieDAO) as Repository }
     }
 
     private val apiModule: Module = module {
