@@ -40,7 +40,7 @@ class App : Application() {
 
     private val viewModelModule: Module = module {
         viewModel { TopViewModel(get()) }
-        viewModel { WatchedListViewModel() }
+        viewModel { WatchedListViewModel(get()) }
     }
 
     private val repositoryModule: Module = module {
