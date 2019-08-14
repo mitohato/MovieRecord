@@ -22,19 +22,21 @@ class WatchedListViewModel(private val repository: Repository) : ViewModel() {
     private val scope = CoroutineScope(mainCoroutineContext)
 
     init {
-        scope.launch(Dispatchers.IO) {
-            repository.getAllMovie().subscribeBy(
-                onSuccess = {
-                    val list = arrayListOf<WatchedListRowItem>()
-                    it.forEach { item ->
-                        list.add(WatchedListRowItem(item))
-                    }
-                    bindableRowItemList.postValue(list)
-                },
-                onError = {
-                    throw it
+        readAllMovie()
+    }
+
+    private fun readAllMovie() = scope.launch(Dispatchers.IO) {
+        repository.getAllMovie().subscribeBy(
+            onSuccess = {
+                val list = arrayListOf<WatchedListRowItem>()
+                it.forEach { item ->
+                    list.add(WatchedListRowItem(item))
                 }
-            )
-        }
+                bindableRowItemList.postValue(list)
+            },
+            onError = {
+                throw it
+            }
+        )
     }
 }
