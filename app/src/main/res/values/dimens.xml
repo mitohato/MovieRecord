@@ -3,4 +3,5 @@
     <dimen name="movie_thumbnail_image">40dp</dimen>
     <dimen name="card_height">95dp</dimen>
     <dimen name="card_content_height">90dp</dimen>
+    <dimen name="base_list_margin">10dp</dimen>
 </resources>

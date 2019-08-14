@@ -120,6 +120,11 @@ dependencies {
 
     implementation("com.squareup.picasso:picasso:2.71828")
 
+    //    Rx
+    implementation("io.reactivex.rxjava2:rxjava:2.1.13")
+    implementation("io.reactivex.rxjava2:rxandroid:2.0.2")
+    implementation("io.reactivex.rxjava2:rxkotlin:2.2.0")
+
     debugImplementation("com.willowtreeapps.hyperion:hyperion-core:0.9.27")
     debugImplementation("com.willowtreeapps.hyperion:hyperion-attr:0.9.27")
     debugImplementation("com.willowtreeapps.hyperion:hyperion-build-config:0.9.27")
