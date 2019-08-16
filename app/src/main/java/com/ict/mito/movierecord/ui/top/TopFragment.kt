@@ -63,7 +63,11 @@ class TopFragment : Fragment() {
         super.onResume()
 
         val appCompatActivity = activity as AppCompatActivity?
-        appCompatActivity?.supportActionBar?.title = getString(R.string.title_top)
+        appCompatActivity?.supportActionBar?.let {
+            it.title = getString(R.string.title_top)
+            it.setDisplayHomeAsUpEnabled(false)
+            it.setHomeButtonEnabled(false)
+        }
     }
 
     override fun onDestroy() {
