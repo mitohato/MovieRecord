@@ -38,7 +38,6 @@ class TopFragment : Fragment() {
             it.viewmodel = viewmodel
             it.lifecycleOwner = this
         }
-        setHasOptionsMenu(true)
         return binding?.root
     }
 
@@ -62,8 +61,13 @@ class TopFragment : Fragment() {
     override fun onResume() {
         super.onResume()
 
+        setHasOptionsMenu(true)
         val appCompatActivity = activity as AppCompatActivity?
-        appCompatActivity?.supportActionBar?.title = getString(R.string.title_top)
+        appCompatActivity?.supportActionBar?.let {
+            it.title = getString(R.string.title_top)
+            it.setDisplayHomeAsUpEnabled(false)
+            it.setHomeButtonEnabled(false)
+        }
     }
 
     override fun onDestroy() {

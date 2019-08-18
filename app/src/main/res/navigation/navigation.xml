@@ -10,5 +10,7 @@
     </fragment>
     <fragment android:id="@+id/watchedListFragment"
               android:name="com.ict.mito.movierecord.ui.watched.WatchedListFragment"
-              android:label="watched_list_fragment" tools:layout="@layout/watched_list_fragment"/>
+              android:label="watched_list_fragment" tools:layout="@layout/watched_list_fragment">
+        <action android:id="@+id/action_watchedListFragment_to_topFragment" app:destination="@id/topFragment"/>
+    </fragment>
 </navigation>
