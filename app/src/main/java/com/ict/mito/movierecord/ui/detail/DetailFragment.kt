@@ -21,6 +21,8 @@ class DetailFragment : Fragment() {
         val args = arguments ?: return null
         val safeArgs = DetailFragmentArgs.fromBundle(args)
 
+        viewModel.movieId = safeArgs.movieId
+
         return inflater.inflate(
             R.layout.detail_fragment,
             container,
