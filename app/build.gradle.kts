@@ -19,32 +19,32 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         buildConfigField(
-                "String",
-                "MOVIE_DB_BASE_URL",
-                System.getProperty("movie_db_base_url")
+            "String",
+            "MOVIE_DB_BASE_URL",
+            System.getProperty("movie_db_base_url")
         )
         buildConfigField(
-                "String",
-                "MOVIE_DB_IMAGE_BASE_URL",
-                System.getProperty("movie_db_image_base_url")
+            "String",
+            "MOVIE_DB_IMAGE_BASE_URL",
+            System.getProperty("movie_db_image_base_url")
         )
         buildConfigField(
-                "String",
-                "MOVIE_DB_API_KEY_V3",
-                System.getProperty("movie_db_api_key_v3")
+            "String",
+            "MOVIE_DB_API_KEY_V3",
+            System.getProperty("movie_db_api_key_v3")
         )
         buildConfigField(
-                "String",
-                "MOVIE_DB_API_KEY_V4",
-                System.getProperty("movie_db_api_key_v4")
+            "String",
+            "MOVIE_DB_API_KEY_V4",
+            System.getProperty("movie_db_api_key_v4")
         )
     }
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
             proguardFiles(
-                    getDefaultProguardFile("proguard-android-optimize.txt"),
-                    "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
             )
         }
     }
@@ -56,13 +56,17 @@ android {
 }
 
 dependencies {
-    implementation(fileTree(mapOf(
-            "dir" to("libs"),
-            "include" to listOf("*.jar")
-    )))
+    implementation(
+        fileTree(
+            mapOf(
+                "dir" to ("libs"),
+                "include" to listOf("*.jar")
+            )
+        )
+    )
 
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
-    val kotlinVersion: String ? by project
+    val kotlinVersion: String? by project
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion")
 
     implementation("androidx.appcompat:appcompat:1.1.0-rc01")
@@ -70,13 +74,13 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:1.1.3")
     implementation("androidx.cardview:cardview:1.0.0")
 
-    val moshiVersion: String ? by project
+    val moshiVersion: String? by project
     implementation("com.squareup.moshi:moshi:$moshiVersion")
     implementation("com.squareup.moshi:moshi-kotlin:$moshiVersion")
     implementation("com.squareup.moshi:moshi-adapters:$moshiVersion")
 
     //    navigation
-    val navigationVersion: String ? by project
+    val navigationVersion: String? by project
     implementation("androidx.navigation:navigation-common-ktx:$navigationVersion")
     implementation("androidx.navigation:navigation-fragment-ktx:$navigationVersion")
     implementation("androidx.navigation:navigation-ui-ktx:$navigationVersion")
@@ -86,14 +90,14 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0")
 
     //    Retrofit
-    val retrofitVersion: String ? by project
+    val retrofitVersion: String? by project
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation("com.squareup.retrofit2:converter-moshi:$retrofitVersion")
     implementation("com.squareup.okhttp3:okhttp:3.12.0")
     implementation("com.squareup.okhttp3:logging-interceptor:3.11.0")
 
     //    room
-    val roomVersion: String ? by project
+    val roomVersion: String? by project
     implementation("androidx.room:room-runtime:$roomVersion")
     implementation("androidx.room:room-rxjava2:$roomVersion")
     implementation("androidx.room:room-ktx:$roomVersion")
@@ -101,7 +105,7 @@ dependencies {
     androidTestImplementation("androidx.room:room-testing:$roomVersion")
 
 //    Koin
-    val koinVersion: String ? by project
+    val koinVersion: String? by project
 //    Koin for Android
     implementation("org.koin:koin-android:$koinVersion")
 //    AndroidX (based on koin-android)
@@ -114,7 +118,7 @@ dependencies {
     androidTestImplementation("androidx.test:runner:1.2.0")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0")
 
-    val groupieVersion: String ? by project
+    val groupieVersion: String? by project
     implementation("com.xwray:groupie:$groupieVersion")
     implementation("com.xwray:groupie-databinding:$groupieVersion")
 
@@ -138,6 +142,7 @@ dependencies {
     debugImplementation("com.willowtreeapps.hyperion:hyperion-timber:0.9.27")
 }
 
-kotlin { // type is KotlinJvmProjectExtension
+kotlin {
+    // type is KotlinJvmProjectExtension
     experimental.coroutines = Coroutines.ENABLE
 }
