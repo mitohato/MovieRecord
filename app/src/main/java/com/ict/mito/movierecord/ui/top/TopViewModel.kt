@@ -13,10 +13,6 @@ class TopViewModel(private val repository: NetRepository) : ViewModel() {
     val groupAdapter: GroupAdapter<ViewHolder<*>> = GroupAdapter()
     lateinit var navController: NavController
 
-    init {
-        updateList()
-    }
-
     fun updateList() {
         bindableRowItemList.value = arrayListOf()
         val list = repository.getNowPlayingMovieList()
