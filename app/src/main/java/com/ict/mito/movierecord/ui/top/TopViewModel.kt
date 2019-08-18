@@ -14,6 +14,10 @@ class TopViewModel(private val repository: NetRepository) : ViewModel() {
     lateinit var navController: NavController
 
     init {
+        updateList()
+    }
+
+    fun updateList() {
         bindableRowItemList.value = arrayListOf()
         val list = repository.getNowPlayingMovieList()
 
