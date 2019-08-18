@@ -22,7 +22,8 @@ class TopRowItem(
         viewBinding.also {
             it.movieItem = movieItem
             it.root.setOnClickListener {
-                navController.navigate(R.id.action_topFragment_to_detailFragment)
+                val action = TopFragmentDirections.actionTopFragmentToDetailFragment(movieItem.id)
+                navController.navigate(action)
             }
         }
     }
