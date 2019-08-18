@@ -8,4 +8,9 @@
         <item name="colorAccent">@color/colorSecondary</item>
     </style>
 
+    <style name="ToolbarTheme" parent="Theme.AppCompat.Light">
+        <item name="android:background">@color/surface</item>
+        <item name="android:textColorPrimary">@color/colorPrimary</item>
+        <item name="android:textColorSecondary">@color/colorPrimary</item>
+    </style>
 </resources>
