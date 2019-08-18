@@ -19,6 +19,11 @@ class TopRowItem(
         viewBinding: MovieCardBinding,
         position: Int
     ) {
-        viewBinding.movieItem = movieItem
+        viewBinding.also {
+            it.movieItem = movieItem
+            it.root.setOnClickListener {
+                navController.navigate(R.id.action_topFragment_to_detailFragment)
+            }
+        }
     }
 }
