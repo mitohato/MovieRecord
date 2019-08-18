@@ -22,7 +22,12 @@ class TopViewModel(private val repository: NetRepository) : ViewModel() {
         val list = repository.getNowPlayingMovieList()
 
         list?.results?.forEach {
-            bindableRowItemList.value?.add(TopRowItem(ResponseConverter().convertToMovieItemFromNowPlayingList(it)))
+            bindableRowItemList.value?.add(
+                TopRowItem(
+                    ResponseConverter().convertToMovieItemFromNowPlayingList(it),
+                    navController
+                )
+            )
         }
         groupAdapter.update(bindableRowItemList.value ?: arrayListOf())
     }
