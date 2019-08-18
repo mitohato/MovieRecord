@@ -17,6 +17,10 @@ class DetailFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        val args = arguments ?: return null
+        val safeArgs = DetailFragmentArgs.fromBundle(args)
+
         return inflater.inflate(
             R.layout.detail_fragment,
             container,
