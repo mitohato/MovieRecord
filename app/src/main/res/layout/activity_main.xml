@@ -15,7 +15,7 @@
             android:background="@color/surface"
             android:elevation="4dp"
             app:titleTextColor="@color/colorPrimary"
-            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            android:theme="@style/ToolbarTheme"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
