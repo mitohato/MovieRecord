@@ -4,6 +4,6 @@
     <dimen name="card_height">95dp</dimen>
     <dimen name="card_content_height">90dp</dimen>
     <dimen name="base_list_margin">10dp</dimen>
-    <dimen name="poster_image_size">50dp</dimen>
+    <dimen name="poster_image_size">100dp</dimen>
     <dimen name="base_margin">20dp</dimen>
 </resources>
