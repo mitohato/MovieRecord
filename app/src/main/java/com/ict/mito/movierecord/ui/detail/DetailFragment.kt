@@ -41,4 +41,9 @@ class DetailFragment : Fragment() {
             it.setHomeButtonEnabled(true)
         }
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        binding = null
+    }
 }
