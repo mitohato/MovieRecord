@@ -11,6 +11,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DetailFragment : Fragment() {
 
+    private var binding: DetailFragmentBinding? = null
     private val viewModel: DetailViewModel by viewModel()
 
     override fun onCreateView(
