@@ -34,6 +34,8 @@ class DetailFragment : Fragment() {
             false
         )
 
+        binding?.viewmodel = viewModel
+
         return binding?.root
     }
 
