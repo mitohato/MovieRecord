@@ -15,8 +15,8 @@
 
         <ImageView
                 android:id="@+id/poster"
-                android:layout_width="@dimen/poster_image_size"
-                android:layout_height="@dimen/poster_image_size"
+                android:layout_width="@dimen/poster_image_width"
+                android:layout_height="@dimen/poster_image_height"
                 app:imageURL="@{viewmodel.detailMovieItem.posterPath}"
                 android:layout_margin="@dimen/base_margin"
                 app:layout_constraintStart_toStartOf="parent"
@@ -77,7 +77,7 @@
                 android:layout_height="0dp"
                 android:text="@{viewmodel.detailMovieItem.overview}"
                 android:layout_margin="@dimen/base_margin"
-                app:layout_constraintTop_toBottomOf="@id/popularity"
+                app:layout_constraintTop_toBottomOf="@id/poster"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
