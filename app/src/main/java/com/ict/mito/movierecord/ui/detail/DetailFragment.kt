@@ -5,12 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.ict.mito.movierecord.R
+import com.ict.mito.movierecord.databinding.DetailFragmentBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DetailFragment : Fragment() {
 
+    private var binding: DetailFragmentBinding? = null
     private val viewModel: DetailViewModel by viewModel()
 
     override fun onCreateView(
@@ -24,11 +27,16 @@ class DetailFragment : Fragment() {
 
         viewModel.movieId = safeArgs.movieId
 
-        return inflater.inflate(
+        binding = DataBindingUtil.inflate(
+            inflater,
             R.layout.detail_fragment,
             container,
             false
         )
+
+        binding?.viewmodel = viewModel
+
+        return binding?.root
     }
 
     override fun onResume() {
@@ -39,5 +47,10 @@ class DetailFragment : Fragment() {
             it.setDisplayHomeAsUpEnabled(true)
             it.setHomeButtonEnabled(true)
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        binding = null
     }
 }
