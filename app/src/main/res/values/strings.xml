@@ -6,4 +6,5 @@
 
     <string name="title_top">Now Playing</string>
     <string name="watched">Watched</string>
+    <string name="movie_poster">movie poster</string>
 </resources>
