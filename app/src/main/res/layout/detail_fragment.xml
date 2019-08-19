@@ -17,6 +17,7 @@
                 android:id="@+id/poster"
                 android:layout_width="@dimen/poster_image_size"
                 android:layout_height="@dimen/poster_image_size"
+                android:layout_margin="@dimen/base_margin"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:contentDescription="@string/movie_poster"/>
