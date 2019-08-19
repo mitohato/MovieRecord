@@ -34,7 +34,10 @@ class DetailFragment : Fragment() {
             false
         )
 
-        binding?.viewmodel = viewModel
+        binding?.let {
+            it.viewmodel = viewModel
+            it.lifecycleOwner = this
+        }
 
         return binding?.root
     }
