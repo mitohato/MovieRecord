@@ -7,6 +7,7 @@ import com.ict.mito.movierecord.domain.db.dao.MovieDAO
 import com.ict.mito.movierecord.repo.NetRepository
 import com.ict.mito.movierecord.repo.Repository
 import com.ict.mito.movierecord.repo.impl.RepositoryImpl
+import com.ict.mito.movierecord.ui.detail.DetailViewModel
 import com.ict.mito.movierecord.ui.top.TopViewModel
 import com.ict.mito.movierecord.ui.watched.WatchedListViewModel
 import org.koin.android.ext.koin.androidContext
@@ -41,6 +42,7 @@ class App : Application() {
     private val viewModelModule: Module = module {
         viewModel { TopViewModel(get()) }
         viewModel { WatchedListViewModel(get()) }
+        viewModel { DetailViewModel(get()) }
     }
 
     private val repositoryModule: Module = module {

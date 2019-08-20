@@ -34,6 +34,11 @@ class TopFragment : Fragment() {
             false
         )
 
+        viewmodel.also {
+            it.navController = findNavController()
+            it.updateList()
+        }
+
         binding?.let {
             it.viewmodel = viewmodel
             it.lifecycleOwner = this

@@ -56,10 +56,14 @@ android {
 }
 
 dependencies {
-    implementation(fileTree(mapOf(
-        "dir" to ("libs"),
-        "include" to listOf("*.jar")
-    )))
+    implementation(
+        fileTree(
+            mapOf(
+                "dir" to ("libs"),
+                "include" to listOf("*.jar")
+            )
+        )
+    )
 
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
     val kotlinVersion: String? by project
@@ -138,6 +142,7 @@ dependencies {
     debugImplementation("com.willowtreeapps.hyperion:hyperion-timber:0.9.27")
 }
 
-kotlin { // type is KotlinJvmProjectExtension
+kotlin {
+    // type is KotlinJvmProjectExtension
     experimental.coroutines = Coroutines.ENABLE
 }

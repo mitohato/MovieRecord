@@ -7,10 +7,18 @@
     <fragment android:id="@+id/topFragment" android:name="com.ict.mito.movierecord.ui.top.TopFragment"
               android:label="top_fragment" tools:layout="@layout/top_fragment">
         <action android:id="@+id/action_topFragment_to_watchedListFragment" app:destination="@id/watchedListFragment"/>
+        <action android:id="@+id/action_topFragment_to_detailFragment" app:destination="@id/detailFragment">
+            <argument android:defaultValue="-1" android:name="movieId"/>
+        </action>
     </fragment>
     <fragment android:id="@+id/watchedListFragment"
               android:name="com.ict.mito.movierecord.ui.watched.WatchedListFragment"
               android:label="watched_list_fragment" tools:layout="@layout/watched_list_fragment">
         <action android:id="@+id/action_watchedListFragment_to_topFragment" app:destination="@id/topFragment"/>
+    </fragment>
+    <fragment android:id="@+id/detailFragment" android:name="com.ict.mito.movierecord.ui.detail.DetailFragment"
+              android:label="detail_fragment" tools:layout="@layout/detail_fragment">
+        <argument android:name="movieId" app:argType="integer"/>
+        <action android:id="@+id/action_detailFragment_to_topFragment" app:destination="@id/topFragment"/>
     </fragment>
 </navigation>
