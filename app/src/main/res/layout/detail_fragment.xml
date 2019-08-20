@@ -89,6 +89,7 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:text="@{viewmodel.detailMovieItem.overview}"
+                android:textSize="16sp"
                 android:textColor="@color/colorPrimary"
                 android:layout_margin="@dimen/base_margin"
                 app:layout_constraintTop_toBottomOf="@id/poster"
