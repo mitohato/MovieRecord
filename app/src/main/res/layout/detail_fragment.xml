@@ -29,7 +29,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@{viewmodel.detailMovieItem.title}"
-                android:textSize="32sp"
+                android:textSize="24sp"
                 android:textColor="@color/colorPrimary"
                 android:maxLines="1"
                 android:layout_margin="@dimen/base_margin"
