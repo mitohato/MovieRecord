@@ -73,7 +73,7 @@
                 android:id="@+id/popularity"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@{String.valueOf(viewmodel.detailMovieItem.popularity)}"
+                android:text="@{viewmodel.detailMovieItem.releaseDate}"
                 android:textColor="@color/colorPrimary"
                 android:maxLines="1"
                 android:layout_marginStart="@dimen/base_margin"
