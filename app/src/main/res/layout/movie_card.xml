@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="movieItem" type="com.ict.mito.movierecord.domain.MovieItem"/>
+    </data>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/card_height">
+
+        <include
+                layout="@layout/movie_card_content"
+                bind:movieItem="@{movieItem}"/>
+    </LinearLayout>
+</layout>
