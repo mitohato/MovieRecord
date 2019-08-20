@@ -17,7 +17,8 @@ data class DetailMovieItem(
     val posterPath: String,
     val releaseDate: String,
     val spokenLanguage: Array<SpokenLanguage>,
-    val title: String
+    val title: String,
+    var watched: Boolean = false
 ) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
