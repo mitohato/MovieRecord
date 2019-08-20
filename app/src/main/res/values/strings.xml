@@ -6,6 +6,7 @@
 
     <string name="title_top">Now Playing</string>
     <string name="watched">Watched</string>
+    <string name="unwatch">Unwatch</string>
     <string name="movie_poster">movie poster</string>
     <string name="add_button_text">hoge</string>
 </resources>
