@@ -108,6 +108,7 @@
                 style="@style/Widget.MaterialComponents.Button.Icon"
                 app:icon="@drawable/ic_check_white_24dp"
                 android:text="@string/add_button_text"
+                android:onClick="@{viewmodel::addToWatchedList}"
                 android:layout_margin="@dimen/base_margin"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
