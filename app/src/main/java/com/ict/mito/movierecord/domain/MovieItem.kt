@@ -11,7 +11,8 @@ data class MovieItem(
     val id: Int,
     val title: String,
     val description: String,
-    val imageUrl: String
+    val imageUrl: String,
+    var watched: Boolean = false
 ) {
     @PrimaryKey(autoGenerate = true)
     var primaryId: Long = 0

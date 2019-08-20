@@ -25,6 +25,7 @@ class WatchedListFragment : Fragment() {
             this,
             Observer {
                 viewModel.groupAdapter.update(it)
+                binding?.notifyChange()
             }
         )
         binding = DataBindingUtil.inflate(

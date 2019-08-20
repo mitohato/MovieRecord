@@ -42,7 +42,12 @@ class App : Application() {
     private val viewModelModule: Module = module {
         viewModel { TopViewModel(get()) }
         viewModel { WatchedListViewModel(get()) }
-        viewModel { DetailViewModel(get()) }
+        viewModel {
+            DetailViewModel(
+                get(),
+                get()
+            )
+        }
     }
 
     private val repositoryModule: Module = module {
