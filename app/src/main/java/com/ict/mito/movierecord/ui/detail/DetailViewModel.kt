@@ -27,7 +27,8 @@ class DetailViewModel(
                 id = detailMovieItem.movieId,
                 title = detailMovieItem.title,
                 description = detailMovieItem.overview,
-                imageUrl = detailMovieItem.posterPath
+                imageUrl = detailMovieItem.posterPath,
+                watched = true
             )
         )
     }
