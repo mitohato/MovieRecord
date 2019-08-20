@@ -20,4 +20,15 @@ class DetailViewModel(
                 detailMovieItem = ResponseConverter().convertToDetailMovieItemFromMovieDetail(it)
             }
         }
+
+    fun addToWatchedList(view: View) {
+        repository.add(
+            MovieItem(
+                id = detailMovieItem.movieId,
+                title = detailMovieItem.title,
+                description = detailMovieItem.overview,
+                imageUrl = detailMovieItem.posterPath
+            )
+        )
+    }
 }
