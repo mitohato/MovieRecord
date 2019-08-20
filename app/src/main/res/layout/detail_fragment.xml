@@ -106,7 +106,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/Widget.MaterialComponents.Button.Icon"
-                app:icon="@drawable/ic_watched_list_black_24dp"
+                app:icon="@drawable/ic_check_white_24dp"
                 android:text="@string/add_button_text"
                 android:layout_margin="@dimen/base_margin"
                 app:layout_constraintEnd_toEndOf="parent"
