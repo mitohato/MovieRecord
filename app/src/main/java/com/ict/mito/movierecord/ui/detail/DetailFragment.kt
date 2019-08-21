@@ -46,7 +46,7 @@ class DetailFragment : Fragment() {
         super.onResume()
         val appCompatActivity = activity as AppCompatActivity?
         appCompatActivity?.supportActionBar?.let {
-            it.title = viewModel.detailMovieItem.title
+            it.title = viewModel.detailMovieItem.value?.title
             it.setDisplayHomeAsUpEnabled(true)
             it.setHomeButtonEnabled(true)
         }
