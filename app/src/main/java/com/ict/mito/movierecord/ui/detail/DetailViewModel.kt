@@ -26,7 +26,7 @@ class DetailViewModel(
 
     fun addToWatchedList(view: View) {
         detailMovieItem.postValue(detailMovieItem.value?.copy(watched = true))
-        detailMovieItem.value.also {
+        detailMovieItem.value?.let {
             repository.add(
                 MovieItem(
                     id = it.movieId,
