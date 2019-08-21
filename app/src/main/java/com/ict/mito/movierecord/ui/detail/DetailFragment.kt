@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import com.ict.mito.movierecord.R
 import com.ict.mito.movierecord.databinding.DetailFragmentBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -25,7 +26,15 @@ class DetailFragment : Fragment() {
         val args = arguments ?: return null
         val safeArgs = DetailFragmentArgs.fromBundle(args)
 
-        viewModel.movieId = safeArgs.movieId
+        viewModel.also {
+            it.movieId = safeArgs.movieId
+            it.detailMovieItem.observe(
+                this,
+                Observer {
+                    binding?.notifyChange()
+                }
+            )
+        }
 
         binding = DataBindingUtil.inflate(
             inflater,
