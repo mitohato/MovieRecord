@@ -69,8 +69,8 @@ dependencies {
     val kotlinVersion: String? by project
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion")
 
-    implementation("androidx.appcompat:appcompat:1.1.0-rc01")
-    implementation("androidx.core:core-ktx:1.2.0-alpha02")
+    implementation("androidx.appcompat:appcompat:1.1.0")
+    implementation("androidx.core:core-ktx:1.2.0-rc01")
     implementation("androidx.constraintlayout:constraintlayout:1.1.3")
     implementation("androidx.cardview:cardview:1.0.0")
 
@@ -86,14 +86,14 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:$navigationVersion")
 
     //    lifecycle
-    implementation("androidx.lifecycle:lifecycle-extensions:2.0.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0")
+    implementation("androidx.lifecycle:lifecycle-extensions:2.1.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0")
 
     //    Retrofit
     val retrofitVersion: String? by project
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation("com.squareup.retrofit2:converter-moshi:$retrofitVersion")
-    implementation("com.squareup.okhttp3:okhttp:3.12.0")
+    implementation("com.squareup.okhttp3:okhttp:3.14.1")
     implementation("com.squareup.okhttp3:logging-interceptor:3.11.0")
 
     //    room
@@ -125,8 +125,8 @@ dependencies {
     implementation("com.squareup.picasso:picasso:2.71828")
 
     //    Rx
-    implementation("io.reactivex.rxjava2:rxjava:2.1.13")
-    implementation("io.reactivex.rxjava2:rxandroid:2.0.2")
+    implementation("io.reactivex.rxjava2:rxjava:2.2.14")
+    implementation("io.reactivex.rxjava2:rxandroid:2.1.1")
     implementation("io.reactivex.rxjava2:rxkotlin:2.2.0")
 
     debugImplementation("com.willowtreeapps.hyperion:hyperion-core:0.9.27")
