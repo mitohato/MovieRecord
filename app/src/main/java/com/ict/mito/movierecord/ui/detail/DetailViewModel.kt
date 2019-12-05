@@ -13,7 +13,7 @@ class DetailViewModel(
     private val netRepository: NetRepository,
     private val repository: Repository
 ) : ViewModel() {
-    lateinit var detailMovieItem: MutableLiveData<DetailMovieItem>
+    var detailMovieItem: MutableLiveData<DetailMovieItem> = MutableLiveData()
     var movieId: Int = -1
         set(value) {
             field = value
