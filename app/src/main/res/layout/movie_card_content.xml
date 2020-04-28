@@ -40,7 +40,7 @@
                     android:layout_margin="10dp"
                     android:textSize="18sp"
                     android:maxLines="1"
-                    tool:text="hogehoge"/>
+                    tool:text="foo"/>
 
             <TextView
                     android:id="@+id/description"
@@ -58,7 +58,7 @@
                     android:layout_marginBottom="10dp"
                     android:maxLines="2"
                     android:ellipsize="end"
-                    tool:text="hogehoge"/>
+                    tool:text="foo"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

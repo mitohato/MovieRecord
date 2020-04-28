@@ -19,6 +19,7 @@ import org.koin.dsl.module
 /**
  * Created by mitohato14 on 2019/04/02.
  */
+@Suppress("unused")
 class App : Application() {
 
     override fun onCreate() {
@@ -52,6 +53,7 @@ class App : Application() {
 
     private val repositoryModule: Module = module {
         single { NetRepository(get()) }
+        @Suppress("USELESS_CAST")
         single { RepositoryImpl(get() as MovieDAO) as Repository }
     }
 

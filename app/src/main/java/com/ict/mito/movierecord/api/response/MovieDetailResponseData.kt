@@ -20,7 +20,7 @@ data class MovieDetailResponseData(
     @Json(name = "popularity")val popularity: Double,
     @Json(name = "poster_path")val posterPath: String?,
     @Json(name = "production_companies")val productionCompanies: Array<ProductionCompany>,
-    @Json(name = "production_countries")val productionCountries: Array<ProducitonCountry>,
+    @Json(name = "production_countries")val productionCountries: Array<ProductionCountry>,
     @Json(name = "release_date")val releaseDate: String,
     @Json(name = "revenue")val revenue: Int,
     @Json(name = "runtime")val runtime: Int?,

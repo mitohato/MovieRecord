@@ -11,7 +11,7 @@ import com.xwray.groupie.databinding.BindableItem
  */
 class TopRowItem(
     val movieItem: MovieItem,
-    val navController: NavController
+    private val navController: NavController
 ) : BindableItem<MovieCardBinding>() {
     override fun getLayout(): Int = R.layout.movie_card
 

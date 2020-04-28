@@ -13,5 +13,5 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
     }
 
-    override fun onSupportNavigateUp(): Boolean = findNavController(R.id.navhost).navigateUp()
+    override fun onSupportNavigateUp(): Boolean = findNavController(R.id.navigation_host).navigateUp()
 }

@@ -22,7 +22,7 @@ class WatchedListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         viewModel.bindableRowItemList.observe(
-            this,
+            viewLifecycleOwner,
             Observer {
                 viewModel.groupAdapter.update(it)
                 binding?.notifyChange()
