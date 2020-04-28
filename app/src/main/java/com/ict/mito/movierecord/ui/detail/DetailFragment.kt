@@ -29,7 +29,7 @@ class DetailFragment : Fragment() {
         viewModel.also {
             it.movieId = safeArgs.movieId
             it.detailMovieItem.observe(
-                this,
+                viewLifecycleOwner,
                 Observer {
                     binding?.notifyChange()
                 }

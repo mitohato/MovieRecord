@@ -22,7 +22,7 @@ class TopFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         viewmodel.bindableRowItemList.observe(
-            this,
+            viewLifecycleOwner,
             Observer { list ->
                 viewmodel.groupAdapter.update(list)
             }
