@@ -6,6 +6,7 @@ plugins {
     id("kotlin-android-extensions")
     id("androidx.navigation.safeargs.kotlin")
     id("kotlin-kapt")
+    id("org.jlleitschuh.gradle.ktlint")
 }
 
 android {
@@ -145,4 +146,11 @@ dependencies {
 kotlin {
     // type is KotlinJvmProjectExtension
     experimental.coroutines = Coroutines.ENABLE
+}
+
+ktlint {
+    version.set("0.31.0")
+    android.set(true)
+    reporters.set(setOf(org.jlleitschuh.gradle.ktlint.reporter.ReporterType.CHECKSTYLE))
+    ignoreFailures.set(true) // NOTE: エラーで中断させないための設定
 }
