@@ -105,16 +105,6 @@ dependencies {
     kapt("androidx.room:room-compiler:$roomVersion")
     androidTestImplementation("androidx.room:room-testing:$roomVersion")
 
-//    Koin
-    val koinVersion: String? by project
-//    Koin for Android
-    implementation("org.koin:koin-android:$koinVersion")
-//    AndroidX (based on koin-android)
-//    Koin AndroidX Scope feature
-    implementation("org.koin:koin-androidx-scope:$koinVersion")
-//    Koin AndroidX ViewModel feature
-    implementation("org.koin:koin-androidx-viewmodel:$koinVersion")
-
     testImplementation("junit:junit:4.13")
     androidTestImplementation("androidx.test:runner:1.2.0")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0")

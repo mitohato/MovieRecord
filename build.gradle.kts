@@ -7,7 +7,6 @@ buildscript {
     val roomVersion by extra("2.1.0")
     val navigationVersion by extra("2.1.0-alpha05")
     val moshiVersion by extra("1.8.0")
-    val koinVersion by extra("2.0.1")
     val groupieVersion by extra("2.3.0")
     val hiltVersion by extra("2.28-alpha")
 
