@@ -13,18 +13,18 @@ class TopRowItem(
     val movieItem: MovieItem,
     private val navController: NavController
 ) : BindableItem<MovieCardBinding>() {
-    override fun getLayout(): Int = R.layout.movie_card
+  override fun getLayout(): Int = R.layout.movie_card
 
-    override fun bind(
-        viewBinding: MovieCardBinding,
-        position: Int
-    ) {
-        viewBinding.also {
-            it.movieItem = movieItem
-            it.root.setOnClickListener {
-                val action = TopFragmentDirections.actionTopFragmentToDetailFragment(movieItem.id)
-                navController.navigate(action)
-            }
-        }
+  override fun bind(
+      viewBinding: MovieCardBinding,
+      position: Int
+  ) {
+    viewBinding.also {
+      it.movieItem = movieItem
+      it.root.setOnClickListener {
+        val action = TopFragmentDirections.actionTopFragmentToDetailFragment(movieItem.id)
+        navController.navigate(action)
+      }
     }
+  }
 }

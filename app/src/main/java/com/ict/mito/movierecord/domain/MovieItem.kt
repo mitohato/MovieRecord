@@ -8,12 +8,12 @@ import androidx.room.PrimaryKey
  */
 @Entity(tableName = "movierecord_movie_table")
 data class MovieItem(
-    val id: Int,
-    val title: String,
-    val description: String,
-    val imageUrl: String,
-    var watched: Boolean = false
+  val id: Int,
+  val title: String,
+  val description: String,
+  val imageUrl: String,
+  var watched: Boolean = false
 ) {
-    @PrimaryKey(autoGenerate = true)
-    var primaryId: Long = 0
+  @PrimaryKey(autoGenerate = true)
+  var primaryId: Long = 0
 }

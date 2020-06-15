@@ -22,47 +22,47 @@ import org.koin.dsl.module
 @Suppress("unused")
 class App : Application() {
 
-    override fun onCreate() {
-        super.onCreate()
+  override fun onCreate() {
+    super.onCreate()
 
-        startKoin {
-            // declare used Android context
-            androidContext(this@App)
-            // declare modules
-            modules(
-                listOf(
-                    viewModelModule,
-                    repositoryModule,
-                    apiModule,
-                    dataBaseModule
-                )
-            )
-        }
+    startKoin {
+      // declare used Android context
+      androidContext(this@App)
+      // declare modules
+      modules(
+        listOf(
+          viewModelModule,
+          repositoryModule,
+          apiModule,
+          dataBaseModule
+        )
+      )
     }
+  }
 
-    private val viewModelModule: Module = module {
-        viewModel { TopViewModel(get()) }
-        viewModel { WatchedListViewModel(get()) }
-        viewModel {
-            DetailViewModel(
-                get(),
-                get()
-            )
-        }
+  private val viewModelModule: Module = module {
+    viewModel { TopViewModel(get()) }
+    viewModel { WatchedListViewModel(get()) }
+    viewModel {
+      DetailViewModel(
+        get(),
+        get()
+      )
     }
+  }
 
-    private val repositoryModule: Module = module {
-        single { NetRepository(get()) }
-        @Suppress("USELESS_CAST")
-        single { RepositoryImpl(get() as MovieDAO) as Repository }
-    }
+  private val repositoryModule: Module = module {
+    single { NetRepository(get()) }
+    @Suppress("USELESS_CAST")
+    single { RepositoryImpl(get() as MovieDAO) as Repository }
+  }
 
-    private val apiModule: Module = module {
-        single { ApiClient() }
-    }
+  private val apiModule: Module = module {
+    single { ApiClient() }
+  }
 
-    private val dataBaseModule: Module = module {
-        single { MovieRoomDataBase.getDataBase(androidContext()) }
-        single { get<MovieRoomDataBase>().movieDao() }
-    }
+  private val dataBaseModule: Module = module {
+    single { MovieRoomDataBase.getDataBase(androidContext()) }
+    single { get<MovieRoomDataBase>().movieDao() }
+  }
 }
