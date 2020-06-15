@@ -9,15 +9,18 @@ buildscript {
     val moshiVersion by extra("1.8.0")
     val koinVersion by extra("2.0.1")
     val groupieVersion by extra("2.3.0")
+    val hiltVersion by extra("2.28-alpha")
 
     repositories {
         google()
         jcenter()
+        mavenCentral()
     }
     dependencies {
         classpath("com.android.tools.build:gradle:4.0.0")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion")
+        classpath("com.google.dagger:hilt-android-gradle-plugin:$hiltVersion")
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }

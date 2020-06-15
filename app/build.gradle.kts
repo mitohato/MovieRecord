@@ -6,6 +6,7 @@ plugins {
     id("kotlin-android-extensions")
     id("androidx.navigation.safeargs.kotlin")
     id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -128,6 +129,16 @@ dependencies {
     implementation("io.reactivex.rxjava2:rxjava:2.2.14")
     implementation("io.reactivex.rxjava2:rxandroid:2.1.1")
     implementation("io.reactivex.rxjava2:rxkotlin:2.2.0")
+
+    val hiltVersion: String? by project
+    implementation("com.google.dagger:hilt-android:$hiltVersion")
+    kapt("com.google.dagger:hilt-android-compiler:$hiltVersion")
+    // For instrumentation tests
+    androidTestImplementation("com.google.dagger:hilt-android-testing:$hiltVersion")
+    kaptAndroidTest("com.google.dagger:hilt-android-compiler:$hiltVersion")
+    // For local unit tests
+    testImplementation("com.google.dagger:hilt-android-testing:$hiltVersion")
+    kaptTest("com.google.dagger:hilt-android-compiler:$hiltVersion")
 
     debugImplementation("com.willowtreeapps.hyperion:hyperion-core:0.9.27")
     debugImplementation("com.willowtreeapps.hyperion:hyperion-attr:0.9.27")
