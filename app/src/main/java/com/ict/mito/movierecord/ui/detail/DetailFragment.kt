@@ -8,14 +8,24 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.ict.mito.movierecord.R
 import com.ict.mito.movierecord.databinding.DetailFragmentBinding
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class DetailFragment : Fragment() {
-
   private var binding: DetailFragmentBinding? = null
-  private val viewModel: DetailViewModel by viewModel()
+
+  @Inject
+  lateinit var viewModelFactory: DetailViewModelFactory
+  private val viewModel: DetailViewModel by lazy {
+    ViewModelProvider(
+      this,
+      viewModelFactory
+    ).get(DetailViewModel::class.java)
+  }
 
   override fun onCreateView(
       inflater: LayoutInflater,

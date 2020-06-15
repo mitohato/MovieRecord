@@ -12,8 +12,8 @@ class WatchedListRowItem(val movieItem: MovieItem) : BindableItem<MovieCardBindi
   override fun getLayout(): Int = R.layout.movie_card
 
   override fun bind(
-    viewBinding: MovieCardBinding,
-    position: Int
+      viewBinding: MovieCardBinding,
+      position: Int
   ) {
     viewBinding.movieItem = movieItem
   }

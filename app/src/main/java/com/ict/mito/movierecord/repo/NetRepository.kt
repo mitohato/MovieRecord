@@ -6,11 +6,12 @@ import com.ict.mito.movierecord.api.response.MovieDetailResponseData
 import com.ict.mito.movierecord.api.response.NowPlayingMovieList
 import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
+import javax.inject.Inject
 
 /**
  * Created by mitohato14 on 2019-06-22.
  */
-class NetRepository(private val apiClient: ApiClient) {
+class NetRepository @Inject constructor(private val apiClient: ApiClient) {
   private val apiKey: String = BuildConfig.MOVIE_DB_API_KEY_V3
   fun getNowPlayingMovieList(): NowPlayingMovieList? {
     var list: NowPlayingMovieList? = null
