@@ -9,9 +9,9 @@ import javax.inject.Inject
  * Created by mitohato14 on 2020/06/15.
  */
 class WatchedListViewModelProvider @Inject constructor(private val repository: Repository) :
-    ViewModelProvider.NewInstanceFactory() {
-    @Suppress("UNCHECKED_CAST")
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return WatchedListViewModel(repository) as T
-    }
+  ViewModelProvider.NewInstanceFactory() {
+  @Suppress("UNCHECKED_CAST")
+  override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+    return WatchedListViewModel(repository) as T
+  }
 }

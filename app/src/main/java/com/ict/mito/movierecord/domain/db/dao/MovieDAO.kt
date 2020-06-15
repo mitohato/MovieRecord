@@ -12,9 +12,9 @@ import io.reactivex.Single
  */
 @Dao
 interface MovieDAO {
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(movieItem: MovieItem)
+  @Insert(onConflict = OnConflictStrategy.REPLACE)
+  fun insert(movieItem: MovieItem)
 
-    @Query("SELECT * FROM movierecord_movie_table")
-    fun getAllMovie(): Single<List<MovieItem>>
+  @Query("SELECT * FROM movierecord_movie_table")
+  fun getAllMovie(): Single<List<MovieItem>>
 }

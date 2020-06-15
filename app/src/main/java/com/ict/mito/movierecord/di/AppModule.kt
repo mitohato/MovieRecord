@@ -19,24 +19,24 @@ import javax.inject.Singleton
 @InstallIn(ApplicationComponent::class)
 @Module
 object AppModule {
-    @Provides
-    @Singleton
-    fun provideNetRepository(apiClient: ApiClient): NetRepository = NetRepository(apiClient)
+  @Provides
+  @Singleton
+  fun provideNetRepository(apiClient: ApiClient): NetRepository = NetRepository(apiClient)
 
-    @Provides
-    @Singleton
-    fun provideRepository(impl: RepositoryImpl): Repository = impl
+  @Provides
+  @Singleton
+  fun provideRepository(impl: RepositoryImpl): Repository = impl
 
-    @Provides
-    @Singleton
-    fun provideApiClient(): ApiClient = ApiClient()
+  @Provides
+  @Singleton
+  fun provideApiClient(): ApiClient = ApiClient()
 
-    @Provides
-    @Singleton
-    fun provideDataBase(application: Application): MovieRoomDataBase =
-        MovieRoomDataBase.getDataBase(application.applicationContext)
+  @Provides
+  @Singleton
+  fun provideDataBase(application: Application): MovieRoomDataBase =
+    MovieRoomDataBase.getDataBase(application.applicationContext)
 
-    @Provides
-    @Singleton
-    fun provideDao(dataBase: MovieRoomDataBase): MovieDAO = dataBase.movieDao()
+  @Provides
+  @Singleton
+  fun provideDao(dataBase: MovieRoomDataBase): MovieDAO = dataBase.movieDao()
 }

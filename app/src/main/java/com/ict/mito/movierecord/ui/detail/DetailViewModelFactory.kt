@@ -13,11 +13,11 @@ class DetailViewModelFactory @Inject constructor(
     private val netRepository: NetRepository,
     private val repository: Repository
 ) : ViewModelProvider.NewInstanceFactory() {
-    @Suppress("UNCHECKED_CAST")
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return DetailViewModel(
-            netRepository,
-            repository
-        ) as T
-    }
+  @Suppress("UNCHECKED_CAST")
+  override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+    return DetailViewModel(
+      netRepository,
+      repository
+    ) as T
+  }
 }
