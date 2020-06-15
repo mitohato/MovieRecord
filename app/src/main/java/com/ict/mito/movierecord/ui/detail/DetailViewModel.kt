@@ -10,8 +10,8 @@ import com.ict.mito.movierecord.repo.NetRepository
 import com.ict.mito.movierecord.repo.Repository
 
 class DetailViewModel(
-    private val netRepository: NetRepository,
-    private val repository: Repository
+  private val netRepository: NetRepository,
+  private val repository: Repository
 ) : ViewModel() {
   var detailMovieItem: MutableLiveData<DetailMovieItem> = MutableLiveData()
   var movieId: Int = -1

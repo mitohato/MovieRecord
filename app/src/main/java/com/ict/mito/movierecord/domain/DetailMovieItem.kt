@@ -7,18 +7,18 @@ import com.ict.mito.movierecord.api.response.SpokenLanguage
  * Created by mitohato14 on 2019-08-18.
  */
 data class DetailMovieItem(
-    val movieId: Int,
-    val genres: Array<Genre>,
-    val homepageUrl: String,
-    val originalLanguage: String,
-    val originalTitle: String,
-    val overview: String,
-    val popularity: Double,
-    val posterPath: String,
-    val releaseDate: String,
-    val spokenLanguage: Array<SpokenLanguage>,
-    val title: String,
-    var watched: Boolean = false
+  val movieId: Int,
+  val genres: Array<Genre>,
+  val homepageUrl: String,
+  val originalLanguage: String,
+  val originalTitle: String,
+  val overview: String,
+  val popularity: Double,
+  val posterPath: String,
+  val releaseDate: String,
+  val spokenLanguage: Array<SpokenLanguage>,
+  val title: String,
+  var watched: Boolean = false
 ) {
   override fun equals(other: Any?): Boolean {
     if (this === other) return true
