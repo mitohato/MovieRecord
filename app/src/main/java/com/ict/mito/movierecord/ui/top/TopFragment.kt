@@ -9,8 +9,10 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.ict.mito.movierecord.R
 import com.ict.mito.movierecord.databinding.TopFragmentBinding
+import dagger.hilt.android.AndroidEntryPoint
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
+@AndroidEntryPoint
 class TopFragment : Fragment() {
 
     private val viewmodel: TopViewModel by viewModel()

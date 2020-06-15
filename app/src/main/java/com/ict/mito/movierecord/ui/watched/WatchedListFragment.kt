@@ -10,8 +10,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.ict.mito.movierecord.R
 import com.ict.mito.movierecord.databinding.WatchedListFragmentBinding
+import dagger.hilt.android.AndroidEntryPoint
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
+@AndroidEntryPoint
 class WatchedListFragment : Fragment() {
     private var binding: WatchedListFragmentBinding? = null
     private val viewModel: WatchedListViewModel by viewModel()
