@@ -6,17 +6,25 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.ict.mito.movierecord.R
 import com.ict.mito.movierecord.databinding.TopFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class TopFragment : Fragment() {
-
-    private val viewmodel: TopViewModel by viewModel()
     private var binding: TopFragmentBinding? = null
+
+    @Inject
+    lateinit var viewModelProvider: TopViewModelProvider
+    private val viewmodel: TopViewModel by lazy {
+        ViewModelProvider(
+            this,
+            viewModelProvider
+        ).get(TopViewModel::class.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
