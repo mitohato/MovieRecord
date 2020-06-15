@@ -13,5 +13,9 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
     }
 
-    override fun onSupportNavigateUp(): Boolean = findNavController(R.id.navigation_host).navigateUp()
+    override fun onResume() {
+        super.onResume()
+    }
+
+    override fun onSupportNavigateUp() = findNavController(R.id.navigation_host).navigateUp()
 }
