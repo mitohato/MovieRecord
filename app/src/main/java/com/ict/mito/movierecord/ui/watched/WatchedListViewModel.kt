@@ -13,30 +13,30 @@ import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
 
 class WatchedListViewModel(private val repository: Repository) : ViewModel() {
-    val bindableRowItemList: MutableLiveData<ArrayList<WatchedListRowItem>> = MutableLiveData()
-    val groupAdapter: GroupAdapter<ViewHolder<*>> = GroupAdapter()
+  val bindableRowItemList: MutableLiveData<ArrayList<WatchedListRowItem>> = MutableLiveData()
+  val groupAdapter: GroupAdapter<ViewHolder<*>> = GroupAdapter()
 
-    private val parentJob = Job()
-    private val mainCoroutineContext: CoroutineContext
-        get() = parentJob + Dispatchers.Main
-    private val scope = CoroutineScope(mainCoroutineContext)
+  private val parentJob = Job()
+  private val mainCoroutineContext: CoroutineContext
+    get() = parentJob + Dispatchers.Main
+  private val scope = CoroutineScope(mainCoroutineContext)
 
-    init {
-        readAllMovie()
-    }
+  init {
+    readAllMovie()
+  }
 
-    private fun readAllMovie() = scope.launch(Dispatchers.IO) {
-        repository.getAllMovie().subscribeBy(
-            onSuccess = {
-                val list = arrayListOf<WatchedListRowItem>()
-                it.forEach { item ->
-                    list.add(WatchedListRowItem(item))
-                }
-                bindableRowItemList.postValue(list)
-            },
-            onError = {
-                throw it
-            }
-        )
-    }
+  private fun readAllMovie() = scope.launch(Dispatchers.IO) {
+    repository.getAllMovie().subscribeBy(
+      onSuccess = {
+        val list = arrayListOf<WatchedListRowItem>()
+        it.forEach { item ->
+          list.add(WatchedListRowItem(item))
+        }
+        bindableRowItemList.postValue(list)
+      },
+      onError = {
+        throw it
+      }
+    )
+  }
 }

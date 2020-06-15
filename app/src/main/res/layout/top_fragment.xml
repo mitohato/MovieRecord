@@ -12,6 +12,7 @@
             android:background="@color/surface"
             tools:context=".ui.top.TopFragment">
 
+        <!--suppress AndroidUnknownAttribute -->
         <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/movie_list_recycler"
                 android:layout_width="0dp"

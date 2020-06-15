@@ -1,13 +1,10 @@
 <resources>
     <string name="app_name">MovieRecord</string>
     <string name="thumbnail">Thumbnail</string>
-    <string name="line">line</string>
     <string name="watched_list">Watched List</string>
 
     <string name="title_top">Now Playing</string>
     <string name="watched">Watched</string>
     <string name="watch">Watch</string>
-    <string name="unwatch">Unwatch</string>
     <string name="movie_poster">movie poster</string>
-    <string name="add_button_text">hoge</string>
 </resources>

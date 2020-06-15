@@ -7,5 +7,5 @@ import io.reactivex.Single
  * Created by mitohato14 on 2019-08-13.
  */
 interface ReadRepository {
-    fun getAllMovie(): Single<List<MovieItem>>
+  fun getAllMovie(): Single<List<MovieItem>>
 }

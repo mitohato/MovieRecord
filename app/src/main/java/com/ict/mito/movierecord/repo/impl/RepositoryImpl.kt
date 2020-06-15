@@ -10,9 +10,9 @@ import io.reactivex.Single
  * Created by mitohato14 on 2019-08-13.
  */
 class RepositoryImpl(private val dao: MovieDAO) : Repository {
-    @WorkerThread
-    override fun getAllMovie(): Single<List<MovieItem>> = dao.getAllMovie()
+  @WorkerThread
+  override fun getAllMovie(): Single<List<MovieItem>> = dao.getAllMovie()
 
-    @WorkerThread
-    override fun add(movieItem: MovieItem) = dao.insert(movieItem)
+  @WorkerThread
+  override fun add(movieItem: MovieItem) = dao.insert(movieItem)
 }

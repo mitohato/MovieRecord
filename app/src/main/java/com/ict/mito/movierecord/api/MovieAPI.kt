@@ -12,16 +12,16 @@ import retrofit2.http.Query
  */
 interface MovieAPI {
 
-    @GET("movie/{movie_id}")
-    suspend fun getMovieDetail(
-        @Path("movie_id") id: Int,
-        @Query("api_key") apiKey: String,
-        @Query("language") language: String = "ja"
-    ): Response<MovieDetailResponseData>
+  @GET("movie/{movie_id}")
+  suspend fun getMovieDetail(
+    @Path("movie_id") id: Int,
+    @Query("api_key") apiKey: String,
+    @Query("language") language: String = "ja"
+  ): Response<MovieDetailResponseData>
 
-    @GET("movie/now_playing")
-    suspend fun getNowPlayingMovieList(
-        @Query("api_key") apiKey: String,
-        @Query("language") language: String = "ja"
-    ): Response<NowPlayingMovieList>
+  @GET("movie/now_playing")
+  suspend fun getNowPlayingMovieList(
+    @Query("api_key") apiKey: String,
+    @Query("language") language: String = "ja"
+  ): Response<NowPlayingMovieList>
 }

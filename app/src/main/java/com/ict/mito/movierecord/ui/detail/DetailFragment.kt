@@ -7,53 +7,62 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import com.ict.mito.movierecord.R
 import com.ict.mito.movierecord.databinding.DetailFragmentBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DetailFragment : Fragment() {
 
-    private var binding: DetailFragmentBinding? = null
-    private val viewModel: DetailViewModel by viewModel()
+  private var binding: DetailFragmentBinding? = null
+  private val viewModel: DetailViewModel by viewModel()
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+  override fun onCreateView(
+      inflater: LayoutInflater,
+      container: ViewGroup?,
+      savedInstanceState: Bundle?
+  ): View? {
 
-        val args = arguments ?: return null
-        val safeArgs = DetailFragmentArgs.fromBundle(args)
+    val args = arguments ?: return null
+    val safeArgs = DetailFragmentArgs.fromBundle(args)
 
-        viewModel.movieId = safeArgs.movieId
-
-        binding = DataBindingUtil.inflate(
-            inflater,
-            R.layout.detail_fragment,
-            container,
-            false
-        )
-
-        binding?.let {
-            it.viewmodel = viewModel
-            it.lifecycleOwner = this
+    viewModel.also {
+      it.movieId = safeArgs.movieId
+      it.detailMovieItem.observe(
+        viewLifecycleOwner,
+        Observer {
+          binding?.notifyChange()
         }
-
-        return binding?.root
+      )
     }
 
-    override fun onResume() {
-        super.onResume()
-        val appCompatActivity = activity as AppCompatActivity?
-        appCompatActivity?.supportActionBar?.let {
-            it.title = viewModel.detailMovieItem.title
-            it.setDisplayHomeAsUpEnabled(true)
-            it.setHomeButtonEnabled(true)
-        }
+    binding = DataBindingUtil.inflate(
+      inflater,
+      R.layout.detail_fragment,
+      container,
+      false
+    )
+
+    binding?.let {
+      it.viewmodel = viewModel
+      it.lifecycleOwner = this
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        binding = null
+    return binding?.root
+  }
+
+  override fun onResume() {
+    super.onResume()
+    val appCompatActivity = activity as AppCompatActivity?
+    appCompatActivity?.supportActionBar?.let {
+      it.title = viewModel.detailMovieItem.value?.title
+      it.setDisplayHomeAsUpEnabled(true)
+      it.setHomeButtonEnabled(true)
     }
+  }
+
+  override fun onDestroy() {
+    super.onDestroy()
+    binding = null
+  }
 }
