@@ -10,8 +10,8 @@ import javax.inject.Inject
  * Created by mitohato14 on 2020/06/15.
  */
 class DetailViewModelFactory @Inject constructor(
-    private val netRepository: NetRepository,
-    private val repository: Repository
+  private val netRepository: NetRepository,
+  private val repository: Repository
 ) : ViewModelProvider.NewInstanceFactory() {
   @Suppress("UNCHECKED_CAST")
   override fun <T : ViewModel?> create(modelClass: Class<T>): T {

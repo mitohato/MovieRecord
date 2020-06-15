@@ -1,12 +1,7 @@
 package com.ict.mito.movierecord.ui.top
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -32,9 +27,9 @@ class TopFragment : Fragment() {
   }
 
   override fun onCreateView(
-      inflater: LayoutInflater,
-      container: ViewGroup?,
-      savedInstanceState: Bundle?
+    inflater: LayoutInflater,
+    container: ViewGroup?,
+    savedInstanceState: Bundle?
   ): View? {
     viewmodel.bindableRowItemList.observe(
       viewLifecycleOwner,
@@ -62,8 +57,8 @@ class TopFragment : Fragment() {
   }
 
   override fun onCreateOptionsMenu(
-      menu: Menu,
-      inflater: MenuInflater
+    menu: Menu,
+    inflater: MenuInflater
   ) {
     inflater.inflate(
       R.menu.main_menu,
@@ -73,7 +68,7 @@ class TopFragment : Fragment() {
 
   override fun onOptionsItemSelected(item: MenuItem): Boolean {
     when (item.itemId) {
-        R.id.watched_list -> findNavController().navigate(R.id.action_topFragment_to_watchedListFragment)
+      R.id.watched_list -> findNavController().navigate(R.id.action_topFragment_to_watchedListFragment)
     }
     return super.onOptionsItemSelected(item)
   }
