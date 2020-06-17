@@ -3,11 +3,13 @@ package com.ict.mito.movierecord.ui.detail
 import android.view.View
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.ict.mito.movierecord.api.response.ResponseConverter
 import com.ict.mito.movierecord.domain.DetailMovieItem
 import com.ict.mito.movierecord.domain.MovieItem
 import com.ict.mito.movierecord.repo.NetRepository
 import com.ict.mito.movierecord.repo.Repository
+import kotlinx.coroutines.launch
 
 class DetailViewModel(
   private val netRepository: NetRepository,
@@ -17,10 +19,12 @@ class DetailViewModel(
   var movieId: Int = -1
     set(value) {
       field = value
-      netRepository.getMovieDetail(value)?.let {
-        detailMovieItem.postValue(
-          ResponseConverter().convertToDetailMovieItemFromMovieDetail(it)
-        )
+      viewModelScope.launch {
+        netRepository.getMovieDetail(value)?.let {
+          detailMovieItem.postValue(
+            ResponseConverter().convertToDetailMovieItemFromMovieDetail(it)
+          )
+        }
       }
     }
 

@@ -4,8 +4,9 @@ import com.ict.mito.movierecord.BuildConfig
 import com.ict.mito.movierecord.api.ApiClient
 import com.ict.mito.movierecord.api.response.MovieDetailResponseData
 import com.ict.mito.movierecord.api.response.NowPlayingMovieList
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 /**
@@ -13,32 +14,28 @@ import javax.inject.Inject
  */
 class NetRepository @Inject constructor(private val apiClient: ApiClient) {
   private val apiKey: String = BuildConfig.MOVIE_DB_API_KEY_V3
-  fun getNowPlayingMovieList(): NowPlayingMovieList? {
+  suspend fun getNowPlayingMovieList(): NowPlayingMovieList? = withContext(Dispatchers.IO) {
     var list: NowPlayingMovieList? = null
-    runBlocking {
-      val job = async { apiClient.service.getNowPlayingMovieList(apiKey) }
-      val res = job.await()
-      if (res.isSuccessful) {
-        list = res.body()
-      }
+    val job = async { apiClient.service.getNowPlayingMovieList(apiKey) }
+    val res = job.await()
+    if (res.isSuccessful) {
+      list = res.body()
     }
-    return list
+    list
   }
 
-  fun getMovieDetail(movieId: Int): MovieDetailResponseData? {
+  suspend fun getMovieDetail(movieId: Int): MovieDetailResponseData? = withContext(Dispatchers.IO) {
     var responseData: MovieDetailResponseData? = null
-    runBlocking {
-      val job = async {
-        apiClient.service.getMovieDetail(
-          movieId,
-          apiKey
-        )
-      }
-      val res = job.await()
-      if (res.isSuccessful) {
-        responseData = res.body()
-      }
+    val job = async {
+      apiClient.service.getMovieDetail(
+        movieId,
+        apiKey
+      )
     }
-    return responseData
+    val res = job.await()
+    if (res.isSuccessful) {
+      responseData = res.body()
+    }
+    responseData
   }
 }
